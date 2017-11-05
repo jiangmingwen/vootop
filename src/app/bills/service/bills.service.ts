@@ -12,7 +12,7 @@ export class BillHttpService {
 
     serviceConfig(url: string, method: string, data?: any): Observable<any> {
         let result;
-        let baseApi = 'http://127.0.0.1:4200/';
+        let baseApi = '';
         url = baseApi + url;
         let headers = new Headers({
             // 'Content-Type': 'application/json',
