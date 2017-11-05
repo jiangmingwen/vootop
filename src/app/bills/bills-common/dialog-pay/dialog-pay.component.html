@@ -1,0 +1,98 @@
+<h2 mat-dialog-title>ENCAISSEMENT</h2>
+<mat-dialog-content fxLayout="column" fxLayoutAlign="center" class="bills-dialog">
+  <div fxLayout="row" fxFlex="80" fxLayout.xs="column" fxFlex.xs="90">
+    <div fxLayout="column" fxFlex="50" fxFlex.xs="100">
+      <mat-toolbar fxFlex="15" class="bill-color1">LIVRAISON</mat-toolbar>
+      <div style="height:30px;" class="bill-num-screen" fxLayoutAlign="end">{{calcResult}}</div>
+      <mat-grid-list cols="4" rowHeight="2:1" fxFlex="60">
+        <mat-grid-tile *ngFor="let item of numBtnArr" [colspan]="item.colspan" [rowspan]="item.rowspan">
+          <div class="bill-numBtn" fxFlex="100" fxLayoutAlign="center">
+            <button mat-raised-button color="primary" fxFlex="100" (click)="onNumBtnClick($event,item.title,scroll)">{{item.title}}</button>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+    <div fxLayout="column" fxFlex="50" fxFlex.xs="100">
+      <div fxLayout="column" fxFlex="36">
+        <div fxLayout="row" class="bill-color1">
+          <div fxFlex="60" fxFlex.xs="40" fxLayoutAlign="end">总消费:</div>
+          <div fxFlex="40" fxFlex.xs="60" fxLayoutAlign="center">￥{{data.price}}</div>
+        </div>
+        <div fxLayout="row" class="bill-color1">
+          <div fxFlex="60" fxFlex.xs="40" fxLayoutAlign="end">总收到:</div>
+          <div fxFlex="40" fxFlex.xs="60" fxLayoutAlign="center">￥{{recevied?recevied:0}}</div>
+        </div>
+        <div fxLayout="row" class="bill-color2">
+          <div fxFlex="60"  fxFlex.xs="40" fxLayoutAlign="end">剩余付款:</div>
+          <div fxFlex="40" fxFlex.xs="60" fxLayoutAlign="center">￥{{(data.price-recevied>0)?(data.price-recevied):0}}</div>
+        </div>
+        <div fxLayout="row" class="bill-color3">
+          <div fxFlex="60" fxFlex.xs="40" fxLayoutAlign="end">找钱:</div>
+          <div fxFlex="40" fxFlex.xs="60" fxLayoutAlign="center">￥{{(recevied-data.price>0)?(recevied-data.price):0}}</div>
+        </div>
+      </div>
+      <div  style="overflow:auto;height:125px;" class="bill-info" #scroll id="scroll">
+        <div *ngFor="let item of detail;let i = index;">
+          {{(i+1) + '. ' + item.name + ': ------ ' + item.price + ' RMB'}}
+        </div>
+        <div style="padding:14px;"></div>
+      </div>
+      <div fxLayout="row" fxFlex="13" fxFlex.xs="18" fxLayoutAlign="center" style="margin-left:10px;">
+        <div fxFlex="50" fxLayoutAlign="center">
+          <button mat-raised-button color="primary" (click)="deleteItem()">删除</button>
+        </div>
+        <div fxFlex="50" fxLayoutAlign="center">
+          <button mat-raised-button color="primary" fxFlex="50" (click)="clearItem()">全部删除</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <mat-grid-list cols="12" rowHeight="2:1" fxFlex="20" fxFlex.xs="10" fxShow.gt-xs fxHide.xs>
+    <mat-grid-tile colspan="4" [rowspan]="2">
+      <button mat-raised-button color="{{currentTypeNum == 0?'warn':'white'}}" (click)="payTypeClick('AUTRE1',0)"> [F6]AUTRE1</button>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="4" [rowspan]="2">
+      <button mat-raised-button color="{{currentTypeNum == 1?'warn':'white'}}" (click)="payTypeClick('AUTRE2',1)">  [F7]AUTRE2</button>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="4" [rowspan]="2">
+      <button mat-raised-button color="{{currentTypeNum == 2?'warn':'white'}}" (click)="payTypeClick('AUTRE3',2)">  [F8]AUTRE3</button>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="3" [rowspan]="2">
+      <button mat-raised-button color="{{currentTypeNum == 3?'warn':'white'}}" (click)="payTypeClick('现金',3)">[F9]现 金</button>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3" [rowspan]="2">
+      <button mat-raised-button color="{{currentTypeNum == 4?'warn':'white'}}" (click)="payTypeClick('支票',4)"> [F10]支 票</button>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3" [rowspan]="2">
+      <button mat-raised-button color="{{currentTypeNum == 5?'warn':'white'}}" (click)="payTypeClick('饭票',5)"> [F11]饭 票</button>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3" [rowspan]="2">
+      <button mat-raised-button color="{{currentTypeNum == 6?'warn':'white'}}" (click)="payTypeClick('信用卡',6)">[F12]信 用 卡</button>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-grid-list cols="12" rowHeight="2:1" fxFlex="20" fxFlex.xs="10" fxShow.xs fxHide.gt-xs style="padding:5px;">
+    <mat-grid-tile colspan="4" [rowspan]="2">
+      <button mat-raised-button color="{{currentTypeNum == 0?'warn':'white'}}" (click)="payTypeClick('AUTRE1',0)"> AUTRE1</button>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="4" [rowspan]="2">
+      <button mat-raised-button color="{{currentTypeNum == 1?'warn':'white'}}" (click)="payTypeClick('AUTRE2',1)">  AUTRE2</button>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="4" [rowspan]="2">
+      <button mat-raised-button color="{{currentTypeNum == 2?'warn':'white'}}" (click)="payTypeClick('AUTRE3',2)">AUTRE3</button>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3" [rowspan]="2">
+      <button mat-raised-button color="{{currentTypeNum == 3?'warn':'white'}}" (click)="payTypeClick('现金',3)">现金</button>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3" [rowspan]="2">
+      <button mat-raised-button color="{{currentTypeNum == 4?'warn':'white'}}" (click)="payTypeClick('支票',4)">支票</button>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3" [rowspan]="2">
+      <button mat-raised-button color="{{currentTypeNum == 5?'warn':'white'}}" (click)="payTypeClick('饭票',5)">饭票</button>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3" [rowspan]="2">
+      <button mat-raised-button color="{{currentTypeNum == 6?'warn':'white'}}" (click)="payTypeClick('信用卡',6)">信用卡</button>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-dialog-content>

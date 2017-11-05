@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>CHANGER COMMANDE</h2>
+<mat-dialog-content fxLayout="column" fxLayoutAlign="center">
+  <mat-form-field>
+    <input matInput placeholder="Cmd. Courante" value="L6" type="text">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Nouvelle Cmd :" value="2" type="text">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="NB. Couvert :" value="1" type="text">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions fxLayout="row">
+  <div fxFlex="50" fxHide.xs fxLayoutAlign="center">
+    <button mat-raised-button color="primary" fxFlex="50" mat-dialog-close>[ENTER] Valider</button>
+  </div>
+  <div fxFlex="50" fxHide.gt-xs fxLayoutAlign="center">
+    <button mat-raised-button color="primary" fxFlex="50" mat-dialog-close>[ENTER]<br> Valider</button>
+  </div>
+
+  <div fxFlex="50" fxHide.gt-xs fxLayoutAlign="center">
+    <button mat-raised-button color="primary" fxFlex="50" [mat-dialog-close]="true">[Echap]<br> Annuler</button>
+  </div>
+  <div fxFlex="50" fxHide.xs fxLayoutAlign="center">
+    <button mat-raised-button color="primary" fxFlex="50" [mat-dialog-close]="true">[Echap] Annuler</button>
+  </div>
+</mat-dialog-actions>

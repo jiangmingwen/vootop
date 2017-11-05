@@ -1,0 +1,19 @@
+.staff-item{
+    height: 70px;
+    justify-content: space-between;
+    align-items: center;
+    .staff-img{
+        height: 60px;
+        width: 60px;
+        img{
+            max-height: 100%;
+            max-width: 100%;
+            &.radius-circle {
+                border-radius: 50%;
+            }
+        }
+    }
+    .staff-message{
+        flex-grow: 1;
+    }
+}

@@ -1,0 +1,72 @@
+[{
+        "id": 1,
+        "Invoice": "2154561237899",
+        "PurchaseTime": "2017-09-13 12:03",
+        "Wholesaler": "曹云货商",
+        "PurchasePrice": "200",
+        "PurchaseMen": "赵晓东",
+        "Mtime": "2017-10-23 14:03"
+    },
+    {
+        "id": 2,
+        "Invoice": "2254561237899",
+        "PurchaseTime": "2017-09-14 12:03",
+        "Wholesaler": "曹云货商",
+        "PurchasePrice": "200",
+        "PurchaseMen": "刘云",
+        "Mtime": "2017-10-23 14:03"
+    },
+    {
+        "id": 3,
+        "Invoice": "2254561237899",
+        "PurchaseTime": "2017-09-14 12:03",
+        "Wholesaler": "曹云货商",
+        "PurchasePrice": "200",
+        "PurchaseMen": "刘云",
+        "Mtime": "2017-10-23 14:03"
+    },
+    {
+        "id": 4,
+        "Invoice": "2254561237899",
+        "PurchaseTime": "2017-09-14 12:03",
+        "Wholesaler": "曹云货商",
+        "PurchasePrice": "200",
+        "PurchaseMen": "刘云",
+        "Mtime": "2017-10-23 14:03"
+    },
+    {
+        "id": 5,
+        "Invoice": "2154561237899",
+        "PurchaseTime": "2017-09-13 12:03",
+        "Wholesaler": "曹云货商",
+        "PurchasePrice": "200",
+        "PurchaseMen": "赵晓东",
+        "Mtime": "2017-10-23 14:03"
+    },
+    {
+        "id": 6,
+        "Invoice": "2154561237899",
+        "PurchaseTime": "2017-09-13 12:03",
+        "Wholesaler": "曹云货商",
+        "PurchasePrice": "200",
+        "PurchaseMen": "赵晓东",
+        "Mtime": "2017-10-23 14:03"
+    },
+    {
+        "id": 7,
+        "Invoice": "2154561237899",
+        "PurchaseTime": "2017-09-13 12:03",
+        "Wholesaler": "曹云货商",
+        "PurchasePrice": "200",
+        "PurchaseMen": "赵晓东",
+        "Mtime": "2017-10-23 14:03"
+    }, {
+        "id": 8,
+        "Invoice": "2254561237899",
+        "PurchaseTime": "2017-09-14 12:03",
+        "Wholesaler": "曹云货商",
+        "PurchasePrice": "200",
+        "PurchaseMen": "刘云",
+        "Mtime": "2017-10-23 14:03"
+    }
+]

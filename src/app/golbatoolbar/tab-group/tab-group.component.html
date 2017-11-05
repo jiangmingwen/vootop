@@ -1,0 +1,26 @@
+<mat-tab-group [selectedIndex]="1" mat-stretch-tabs>
+    <mat-tab>
+      <ng-template mat-tab-label>Today</ng-template>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>Notifications</ng-template>
+      <div class="scroll">
+        <mat-nav-list>
+          <mat-list-item class="mat-list-item-content">
+            <mat-icon mat-list-avatar>person_add</mat-icon>
+            <div class="mat-list-text">
+              <h4 mat-line>Added Joel to contact list</h4>
+              <span class="text-mat mat-text-muted" mat-line>{{ 1428275520000 | date: 'fullDate' }}</span>
+            </div>
+          </mat-list-item>
+          <mat-list-item class="mat-list-item-content">
+            <mat-icon mat-list-avatar>phone_missed</mat-icon>
+            <div class="mat-list-text">
+              <h4 mat-line>Missed live call from Ellie</h4>
+              <span class="text-mat mat-text-muted" mat-line>{{ 1428830580000 | date: 'fullDate' }}</span>
+            </div>
+          </mat-list-item>
+        </mat-nav-list>
+      </div>
+    </mat-tab>
+  </mat-tab-group>

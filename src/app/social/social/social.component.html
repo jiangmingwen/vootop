@@ -1,0 +1,78 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span fxFlex></span>
+    <button mat-raised-button color="accent" class="ml-xs mr-xs">Send Message</button>
+    <button mat-raised-button color="warn" class="ml-xs mr-xs">Follow</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="wrapper">
+  <div  fxLayout="row" fxLayoutWrap="wrap">
+    <div fxFlex.gt-sm="40" fxFlex="100">
+      <mat-card>
+        <!-- 管理员信息 -->
+        <mat-card-content>
+          <div fxLayout="row" >
+            <figure>
+              <div class="text-xs-center">
+                <img src="assets/images/social/avatar.jpg" alt="" class="radius-circle">
+              </div>
+            </figure>
+            <div fxLayout="column" fxLayoutWrap fxLayoutGap="20px" fxFlexAlign="center" class="my-header-title">
+              <div class="text-mat mt10">Header title</div>
+              <div class="text-xs-center my-header-subtitle"><small>Header subtitle</small></div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <!-- 超级管理员权限，员工表 -->
+      <mat-card *ngIf="isSuperManager">
+        <app-staff-list></app-staff-list>
+      </mat-card>
+    </div>
+    <div fxFlex.gt-sm="60" fxFlex="100">
+      <div fxLayout="column">
+        <!-- 留言栏 -->
+        <mat-card class="profile-post">
+          <form  fxLayout="row">
+            <textarea placeholder="What's on your mind" rows="6"></textarea>
+          </form>
+          <hr>
+          <mat-card-actions>
+            <div fxLayout="row">
+              <span fxFlex></span>
+              <button mat-raised-button color="primary">Post</button>
+            </div>
+          </mat-card-actions>
+        </mat-card>
+        <!-- 员工留言、删除单子 -->
+        <mat-card>
+          <mat-tab-group>
+            <mat-tab>
+              <ng-template mat-tab-label>员工留言</ng-template>
+              <mat-card-content>
+                <app-staff-guest></app-staff-guest>
+              </mat-card-content>
+              <!-- <div class="activity-stream">
+                <mat-card class="shadow-none">
+                  <mat-card-header>
+                    <img mat-card-avatar src="assets/images/social/face4.jpg">
+                    <mat-card-title>Uploaded new file</mat-card-title>
+                    <mat-card-subtitle>Header subtitle</mat-card-subtitle>
+                  </mat-card-header>
+                </mat-card>
+              </div> -->
+            </mat-tab>
+            <mat-tab>
+              <ng-template mat-tab-label>删除单子</ng-template>
+              <mat-card-content>
+                <app-my-list></app-my-list>
+              </mat-card-content>
+            </mat-tab>
+          </mat-tab-group>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <p>shfgjhdfgf</p> -->

@@ -1,0 +1,55 @@
+.mat-column-visible,
+.mat-column-delete {
+    max-width: 10%;
+}
+
+
+/* Structure */
+
+.manage-table-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    border: 1px solid;
+    border-color: #ddd;
+}
+
+.manage-table-header {
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+    font-size: 20px;
+}
+
+.mat-table {
+    overflow: auto;
+    max-height: 500px;
+}
+
+.mat-header-cell .mat-sort-header-sorted {
+    color: black;
+}
+
+.mat-header-row,
+.mat-row {
+    min-width: 818px
+}
+
+.example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+.button-row {
+    display: flex;
+    margin-top: 18px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.flex {
+    margin: 30px 0 0 0;
+}

@@ -1,0 +1,42 @@
+<!--suppress ALL -->
+<div class="bg">
+  <div class="login-main">
+    <mat-card>
+      <div class="header-image-box"><img class="header-image" src="../../../assets/images/nilogo.png"></div>
+      <div class="header-title">收银系统</div>
+      <mat-card-content>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div>
+            <mat-form-field>
+              <input matInput placeholder=" 邮箱" type="email" [formControl]="form.controls['email']">
+            </mat-form-field>
+            <small *ngIf="form.controls['email'].hasError('required') && form.controls['email'].touched" >You must include an email address.</small>
+            <small *ngIf="form.controls['email'].errors?.email && form.controls['email'].touched">You must include a valid email address.</small>
+          </div>
+          <div>
+            <mat-form-field>
+              <input matInput type="password" placeholder="密码" [formControl]="form.controls['password']">
+            </mat-form-field>
+            <small *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched" class="mat-text-warn">Password is required.</small>
+          </div>
+          <div>
+            <mat-checkbox checked="false">下次登录记住我</mat-checkbox>
+          </div>
+          <div >
+            <button class="button-group" mat-raised-button color="primary" type="submit" [disabled]="!form.valid">
+              <mat-icon>fingerprint</mat-icon>登录</button>
+          </div>
+            </form>
+        <div class="button-group">
+          <button mat-raised-button (click)="recoverPwd()">密码找回</button>
+          <button mat-raised-button (click)="register()">注册</button>
+        </div>
+        <div class="link-group">
+          <a href="https://www.google.fr"><img mat-card-avatar src="../../../assets/images/twitter.png" alt=""></a>
+          <img mat-card-avatar (click)="recoverPwd()" src="../../../assets/images/fb.png" alt="">
+          <img mat-card-avatar (click)="recoverPwd()" src="../../../assets/images/google.png" alt="">
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

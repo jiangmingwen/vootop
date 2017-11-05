@@ -1,0 +1,75 @@
+// html{height:100%}
+
+// body{
+//     background: url('../images/bg.jpg') no-repeat ;
+//     background-size:cover;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     margin: 0 auto;
+//     box-sizing: border-box;
+//     min-height:100%
+//   }
+html,body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+div {
+  &.bg {
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../images/bg.jpg') no-repeat;
+    background-size: cover;
+  }
+}
+mat-form-field {
+  width: 100%;
+}
+mat-grid-tile {
+  width: 30%;
+}
+mat-icon {
+  cursor: pointer;
+}
+.login-main {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.header-image-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-image {
+  width: 80%;
+}
+.header-title {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  color: #777777;
+}
+.link-group {
+  display: flex;
+  justify-content: center;
+  img {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+  }
+}
+.button-group {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  button {
+    margin: 15px 20px;
+    & + button {
+      background-color: #ffc500 !important;
+    }
+  }
+}

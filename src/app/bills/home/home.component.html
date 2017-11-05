@@ -1,0 +1,102 @@
+<mat-tab-group class="demo-tab-group" (selectChange)="selectChange($event)">
+  <mat-tab label="餐厅消费">
+    <mat-form-field class="filter-input">
+      <input matInput placeholder="根据关键字搜索客户名" [(ngModel)]="search" (keyup)="onSearchKeyUp(search)" type="search">
+      <span matPrefix>
+            <mat-icon>search</mat-icon>
+        </span>
+    </mat-form-field>
+    <div class="tab-content">
+      <app-bills-common [allBills]="allBills"></app-bills-common>
+    </div>
+  </mat-tab>
+  <mat-tab label="送包账单">
+    <mat-form-field class="filter-input">
+      <input matInput placeholder="根据关键字搜索客户名" [(ngModel)]="search" (keyup)="onSearchKeyUp(search)" type="search">
+      <span matPrefix>
+                <mat-icon>search</mat-icon>
+            </span>
+    </mat-form-field>
+    <div class="tab-content">
+      <app-bills-common [allBills]="allBills"></app-bills-common>
+    </div>
+  </mat-tab>
+  <mat-tab label="打包账单">
+    <mat-form-field class="filter-input">
+      <input matInput placeholder="根据关键字搜索客户名" [(ngModel)]="search" (keyup)="onSearchKeyUp(search)" type="search">
+      <span matPrefix>
+                <mat-icon>search</mat-icon>
+            </span>
+    </mat-form-field>
+    <div class="tab-content">
+      <app-bills-common [allBills]="allBills"></app-bills-common>
+    </div>
+  </mat-tab>
+  <mat-tab label="未支付账单">
+    <mat-form-field class="filter-input">
+      <input matInput placeholder="根据关键字搜索客户名" [(ngModel)]="search" (keyup)="onSearchKeyUp(search)" type="search">
+      <span matPrefix>
+                <mat-icon>search</mat-icon>
+            </span>
+    </mat-form-field>
+    <div class="tab-content">
+      <app-bills-common [allBills]="allBills"></app-bills-common>
+    </div>
+  </mat-tab>
+  <mat-tab label="已经支付放入账单">
+    <mat-form-field class="filter-input">
+      <input matInput placeholder="根据关键字搜索客户名" [(ngModel)]="search" (keyup)="onSearchKeyUp(search)" type="search">
+      <span matPrefix>
+                <mat-icon>search</mat-icon>
+            </span>
+    </mat-form-field>
+    <div class="tab-content">
+      <app-bills-common [allBills]="allBills"></app-bills-common>
+    </div>
+  </mat-tab>
+  <mat-tab label="账单管理">
+    <mat-form-field class="filter-input">
+      <input matInput placeholder="根据关键字搜索客户名" [(ngModel)]="search" (keyup)="onSearchKeyUp(search)" type="search">
+      <span matPrefix>
+                <mat-icon>search</mat-icon>
+            </span>
+    </mat-form-field>
+    <div class="tab-content">
+      <mat-card>
+        <mat-table #table [dataSource]="dataSource">
+          <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef fxLayoutAlign="center"> 编号. </mat-header-cell>
+            <mat-cell *matCellDef="let element" fxLayoutAlign="center"> {{element.id}} </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef fxLayoutAlign="center"> 名字 </mat-header-cell>
+            <mat-cell *matCellDef="let element" fxLayoutAlign="center"> {{element.name}} </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="paid">
+            <mat-header-cell *matHeaderCellDef fxLayoutAlign="center"> 是否支付 </mat-header-cell>
+            <mat-cell *matCellDef="let element" fxLayoutAlign="center"> {{element.paid?'已支付':'未支付'}} </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="tableNum">
+            <mat-header-cell *matHeaderCellDef fxLayoutAlign="center"> 桌号 </mat-header-cell>
+            <mat-cell *matCellDef="let element" fxLayoutAlign="center"> {{element.tableNum}} </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="price">
+            <mat-header-cell *matHeaderCellDef fxLayoutAlign="center"> 价格 </mat-header-cell>
+            <mat-cell *matCellDef="let element" fxLayoutAlign="center"> {{element.price}} </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="type">
+            <mat-header-cell *matHeaderCellDef fxLayoutAlign="center"> 配送 </mat-header-cell>
+            <mat-cell *matCellDef="let element" fxLayoutAlign="center">
+              <div *ngIf="element.type === 'pack'">打包</div>
+              <div *ngIf="element.type === 'send'">送包</div>
+              <div *ngIf="element.type === 'restaurant'">餐馆就餐</div>
+            </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      </mat-card>
+    </div>
+  </mat-tab>
+</mat-tab-group>

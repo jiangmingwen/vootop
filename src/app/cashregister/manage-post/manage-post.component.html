@@ -1,0 +1,147 @@
+<div fxLayout fxFlexFill fxLayoutGap.xs="0px" fxLayoutAlign="center">
+    <mat-tab-group fxFlex.xs="100%" fxFlex="80%">
+        <mat-tab label="收银报表">
+            <mat-card>
+                <mat-card-content>
+                    <div class="manage-table-container">
+                        <mat-table fxFlexFill #table [dataSource]="dataSource" matSort>
+                            <!-- check Column -->
+                            <ng-container matColumnDef="check" style=" min-width: 1000px;">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 60px"> </mat-header-cell>
+                                <mat-cell *matCellDef="let row" style="min-width: 60px">
+                                    <div fxFlex>
+                                        <mat-checkbox>{{row.id}}</mat-checkbox>
+                                    </div>
+                                </mat-cell>
+                            </ng-container>
+
+                            <!-- date Column -->
+                            <ng-container matColumnDef="date" style=" min-width: 1000px;">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 126px"> 日期 </mat-header-cell>
+                                <mat-cell *matCellDef="let row" style="min-width: 126px">
+                                    {{row.date}}
+                                </mat-cell>
+                            </ng-container>
+                            <!-- orderQuantity Column -->
+                            <ng-container matColumnDef="orderQuantity" style=" min-width: 1000px;">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 100px"> 订单数量 </mat-header-cell>
+                                <mat-cell *matCellDef="let row" style="min-width: 100px">
+                                    {{row. orderQuantity}}
+                                </mat-cell>
+                            </ng-container>
+                            <!--  income Column -->
+                            <ng-container matColumnDef="income" style=" min-width: 1000px;">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 100px"> 收入 </mat-header-cell>
+                                <mat-cell *matCellDef="let row" style="min-width: 100px">
+                                    {{row.income}}
+                                </mat-cell>
+                            </ng-container>
+                            <!-- cash Column -->
+                            <ng-container matColumnDef="cash" style=" min-width: 1000px;">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 100px"> 现金 </mat-header-cell>
+                                <mat-cell *matCellDef="let row" style="min-width: 100px">
+                                    {{row.cash}}
+                                </mat-cell>
+                            </ng-container>
+                            <!-- card Column -->
+                            <ng-container matColumnDef="card" style=" min-width: 1000px;">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 100px"> 卡 </mat-header-cell>
+                                <mat-cell *matCellDef="let row" style="min-width: 100px">
+                                    {{row.card}}
+                                </mat-cell>
+                            </ng-container>
+                            <!-- mealTicket Column -->
+                            <ng-container matColumnDef="mealTicket" style=" min-width: 1000px;">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 100px"> 饭票 </mat-header-cell>
+                                <mat-cell *matCellDef="let row" style="min-width: 100px">
+                                    {{row.mealTicket}}
+                                </mat-cell>
+                            </ng-container>
+                            <!-- other1 Column -->
+                            <ng-container matColumnDef="other1" style=" min-width: 1000px;">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 100px"> 其他1 </mat-header-cell>
+                                <mat-cell *matCellDef="let row" style="min-width: 100px">
+                                    {{row.other1}}
+                                </mat-cell>
+                            </ng-container>
+                            <!-- other2 Column -->
+                            <ng-container matColumnDef="other2" style=" min-width: 1000px;">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 100px"> 其他2 </mat-header-cell>
+                                <mat-cell *matCellDef="let row" style="min-width: 100px">
+                                    {{row.other2}}
+                                </mat-cell>
+                            </ng-container>
+                            <!-- other3 Column -->
+                            <ng-container matColumnDef="other3" style=" min-width: 1000px;">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 100px"> 其他3 </mat-header-cell>
+                                <mat-cell *matCellDef="let row" style="min-width: 100px">
+                                    {{row.other3}}
+                                </mat-cell>
+                            </ng-container>
+                            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                        </mat-table>
+                        <table fxFlexFill class="mat-table">
+                            <tbody fxFlexFill class="mat-table">
+                                <tr class="mat-row" role="row" style="background-color:#5F61AC">
+                                    <td class="mat-cell" role="gridcell" style="min-width: 60px;color:#D0DEA5"> </td>
+                                    <td class="mat-cell" role="gridcell" style="min-width: 126px;color:#D0DEA5"> 538 </td>
+                                    <td class="mat-cell" style="min-width: 100px;color:#D0DEA5" role="gridcell"> 1588.56 </td>
+                                    <td class="mat-cell" style="min-width: 100px;color:#D0DEA5" role="gridcell"> 1299.52 </td>
+                                    <td class="mat-cell" style="min-width: 100px;color:#D0DEA5" role="gridcell">11943.06 </td>
+                                    <td class="mat-cell" style="min-width: 100px;color:#D0DEA5" role="gridcell"> 2.00 </td>
+                                    <td class="mat-cell" style="min-width: 100px;color:#D0DEA5" role="gridcell"> 2642.04 </td>
+                                    <td class="mat-cell" style="min-width: 100px;color:#D0DEA5" role="gridcell"> 0.00 </td>
+                                    <td class="mat-cell" style="min-width: 100px;color:#D0DEA5" role="gridcell"> 0.00 </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="manage-table-container">
+                        <mat-table fxFlexFill #table1 [dataSource]="deleteDataSource">
+                            <!-- Position Column -->
+                            <ng-container matColumnDef="type">
+                                <mat-header-cell *matHeaderCellDef style="font-size:14px;color: rgba(0,0,0,.87);"> 类型 </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.type}} </mat-cell>
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="orderQuantity">
+                                <mat-header-cell *matHeaderCellDef style="font-size:14px;color: rgba(0,0,0,.87);"> 订单数量 </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.orderQuantity}} </mat-cell>
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="grossIncome">
+                                <mat-header-cell *matHeaderCellDef style="font-size:14px;color: rgba(0,0,0,.87);"> 总收入 </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.grossIncome}} </mat-cell>
+                            </ng-container>
+
+                            <!-- Color Column -->
+                            <ng-container matColumnDef="taxRate">
+                                <mat-header-cell *matHeaderCellDef style="font-size:14px;color: rgba(0,0,0,.87);"> 税率 </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.taxRate}} </mat-cell>
+                            </ng-container>
+                            <!-- Color Column -->
+                            <ng-container matColumnDef="taxIncome">
+                                <mat-header-cell *matHeaderCellDef style="font-size:14px;color: rgba(0,0,0,.87);"> 税的收入 </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.taxIncome}} </mat-cell>
+                            </ng-container>
+                            <mat-header-row *matHeaderRowDef="deleteDisplayedColumns"></mat-header-row>
+                            <mat-row *matRowDef="let row; columns: deleteDisplayedColumns;"></mat-row>
+                        </mat-table>
+                    </div>
+                </mat-card-content>
+                <mat-card-footer class="button-row">
+                    <mat-form-field style="width:130px">
+                        <input matInput [matDatepicker]="myDatepicker" (dateChange)="onDateChange($event)">
+                        <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+                        <mat-datepicker #myDatepicker></mat-datepicker>
+                    </mat-form-field>
+                    <button mat-button (click)="openMonthlyDialog()">打开月报表</button>
+                    <button mat-button (click)="openAnnualDialog()">打开年报表</button>
+                </mat-card-footer>
+            </mat-card>
+        </mat-tab>
+    </mat-tab-group>
+</div>

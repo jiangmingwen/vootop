@@ -1,0 +1,96 @@
+[{
+        "id": 1,
+        "date": "2016-12-10 02:03",
+        "orderQuantity": "100",
+        "income": "5",
+        "cash": "121",
+        "card": "70",
+        "mealTicket": "123",
+        "other1": "1700",
+        "other2": "1401",
+        "other3": "1042"
+    },
+    {
+        "id": 2,
+        "date": "2017-01-13 12:03",
+        "orderQuantity": "1042",
+        "income": "210",
+        "cash": "1232",
+        "card": "2210",
+        "mealTicket": "1272",
+        "other1": "10230",
+        "other2": "22301",
+        "other3": "2024"
+    },
+    {
+        "id": 3,
+        "date": "2013-09-12 12:03",
+        "orderQuantity": "12100",
+        "income": "5420",
+        "cash": "523",
+        "card": "230",
+        "mealTicket": "4162",
+        "other1": "23300",
+        "other2": "55301",
+        "other3": "3402"
+    },
+    {
+        "id": 4,
+        "date": "2007-09-14 12:03",
+        "orderQuantity": "200",
+        "income": "20",
+        "cash": "4",
+        "card": "40",
+        "mealTicket": "102",
+        "other1": "4200",
+        "other2": "401",
+        "other3": "402"
+    },
+    {
+        "id": 5,
+        "date": "2014-09-16 12:03",
+        "orderQuantity": "1300",
+        "income": "220",
+        "cash": "35",
+        "card": "12150",
+        "mealTicket": "1222",
+        "other1": "2500",
+        "other2": "6501",
+        "other3": "1502"
+    },
+    {
+        "id": 6,
+        "date": "2017-04-18 12:03",
+        "orderQuantity": "1100",
+        "income": "20",
+        "cash": "6",
+        "card": "60",
+        "mealTicket": "132",
+        "other1": "600",
+        "other2": "601",
+        "other3": "122"
+    },
+    {
+        "id": 7,
+        "date": "2017-09-20 12:03",
+        "orderQuantity": "100",
+        "income": "20",
+        "cash": "12",
+        "card": "120",
+        "mealTicket": "142",
+        "other1": "110",
+        "other2": "131",
+        "other3": "12"
+    }, {
+        "id": 8,
+        "date": "2017-09-30 12:03",
+        "orderQuantity": "100",
+        "income": "220",
+        "cash": "11",
+        "card": "120",
+        "mealTicket": "152",
+        "other1": "10",
+        "other2": "11",
+        "other3": "12"
+    }
+]

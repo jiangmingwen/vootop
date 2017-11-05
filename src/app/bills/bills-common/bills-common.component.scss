@@ -1,0 +1,52 @@
+.bill-card {
+    padding:5px;
+    position: relative;
+     .bill-item{
+         padding: 10px;
+         .bill-main {
+             img {
+                 width:100%;
+                 height: 300px;
+                 border-bottom: 1px solid #eaeaea;
+             }
+         }
+         .bill-tableNum{
+             cursor: pointer;
+             font-size: 20px;
+         }
+     }
+ 
+     .bill-sale{
+         color: #fff;
+         text-align: center;
+         position: absolute;
+         border-top: 30px solid #f44336;
+         border-bottom: 30px solid transparent;
+         border-right: 30px solid transparent;
+         border-left: 30px solid #f44336;
+         top: 5px;
+         left: 5px;
+         z-index: 100;
+         span {
+             position: absolute;
+             -webkit-transform: rotate(-45deg);
+             transform: rotate(-45deg);
+             top: -18px;
+             left: -25px;
+             white-space: nowrap;
+         }
+     }
+ 
+     .bill-sidenav{
+         width: 50px;
+         position: absolute;
+         right: 5px;
+         top:5px;
+         height: calc(100% - 10px);
+         background-color: rgba(0, 0, 0, .8);
+         color: #FFF;
+         cursor: pointer;
+         border-radius: 2px;
+     }
+ }
+ 

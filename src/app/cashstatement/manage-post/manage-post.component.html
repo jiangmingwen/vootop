@@ -1,0 +1,124 @@
+<div fxLayout fxFlexFill fxLayoutGap.xs="0px" fxLayoutAlign="center">
+    <!-- class="flex" fxLayout="row" fxLayoutWrap fxLayoutAlign="center center" -->
+    <mat-card fxFlex.xs="100%" fxFlex="80%">
+        <mat-card-header>
+            <mat-form-field floatPlaceholder="never">
+                <input matInput #filter placeholder="根据发票号码和进货时间搜索">
+            </mat-form-field>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="manage-table-container">
+                <mat-table fxFlexFill #tablePost [dataSource]="dataSource" matSort>
+
+                    <!-- Invoice Column -->
+                    <ng-container matColumnDef="Invoice" style=" min-width: 818px;">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 120px"> 发票号码 </mat-header-cell>
+                        <mat-cell *matCellDef="let row" style="min-width: 120px">
+                            <mat-form-field *ngIf="row.id==selectedId">
+                                <input matInput placeholder="发票号码" [formControl]="InvoiceFormControl" [(ngModel)]="row.Invoice">
+                                <mat-error *ngIf="InvoiceFormControl.hasError('required')">
+                                    发票号码 <strong>必填项</strong>
+                                </mat-error>
+                            </mat-form-field>
+                            <span *ngIf="row.id!=selectedId">{{row.Invoice}}</span>
+                            <!-- <a routerLink="/manage/posts/{{row.id}}"> {{row.title | truncate: 30 }} </a> -->
+                        </mat-cell>
+                    </ng-container>
+                    <!-- PurchaseTime Column -->
+                    <ng-container matColumnDef="PurchaseTime">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 126px"> 进货时间 </mat-header-cell>
+                        <mat-cell *matCellDef="let row" style="min-width: 126px">
+                            <mat-form-field *ngIf="row.id==selectedId">
+                                <input matInput placeholder="进货时间" [(ngModel)]="row.PurchaseTime" [formControl]="PurchaseTimeFormControl">
+                                <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker> -->
+                                <mat-error *ngIf="PurchaseTimeFormControl.hasError('required')">
+                                    进货时间 <strong>必填项</strong>
+                                </mat-error>
+                            </mat-form-field> <span *ngIf="row.id!=selectedId">{{row.PurchaseTime }}</span> </mat-cell>
+                    </ng-container>
+
+                    <!-- Wholesaler Column -->
+                    <ng-container matColumnDef="Wholesaler">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 120px"> 批发商 </mat-header-cell>
+                        <mat-cell *matCellDef="let row" style="min-width: 120px">
+                            <mat-form-field *ngIf="row.id==selectedId">
+                                <input matInput placeholder="批发商" [(ngModel)]="row.Wholesaler" [formControl]="WholesalerFormControl">
+                                <mat-error *ngIf="WholesalerFormControl.hasError('required')">
+                                    批发商 <strong>必填项</strong>
+                                </mat-error>
+                            </mat-form-field> <span *ngIf="row.id!=selectedId">{{row.Wholesaler}}</span> </mat-cell>
+                    </ng-container>
+                    <!-- PurchasePrice By Column -->
+                    <ng-container matColumnDef="PurchasePrice">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 120px"> 进货价格</mat-header-cell>
+                        <mat-cell *matCellDef="let row" style="min-width: 120px">
+                            <mat-form-field *ngIf="row.id==selectedId">
+                                <input matInput placeholder="进货价格" [(ngModel)]="row.PurchasePrice" [formControl]="PurchasePriceFormControl">
+                                <mat-error *ngIf="PurchasePriceFormControl.hasError('required')">
+                                    进货价格 <strong>必填项</strong>
+                                </mat-error>
+                            </mat-form-field> <span *ngIf="row.id!=selectedId">{{row.PurchasePrice}}</span> </mat-cell>
+                    </ng-container>
+                    <!-- PurchaseMen Column -->
+                    <ng-container matColumnDef="PurchaseMen">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 120px"> 进货人 </mat-header-cell>
+                        <mat-cell *matCellDef="let row" style="min-width: 120px">
+                            <mat-form-field *ngIf="row.id==selectedId">
+                                <input matInput placeholder="进货人" [(ngModel)]="row.PurchaseMen" [formControl]="PurchaseMenFormControl">
+                                <mat-error *ngIf="PurchaseMenFormControl.hasError('required')">
+                                    进货人 <strong>必填项</strong>
+                                </mat-error>
+                            </mat-form-field> <span *ngIf="row.id!=selectedId"> {{row.PurchaseMen}} </span></mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="Mtime">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 126px"> 修改时间 </mat-header-cell>
+                        <mat-cell *matCellDef="let row" style="min-width: 126px">
+                            <mat-form-field *ngIf="row.id==selectedId">
+                                <input matInput placeholder="修改时间" [(ngModel)]="row.Mtime" [formControl]="MtimeFormControl">
+                                <mat-error *ngIf="MtimeFormControl.hasError('required')">
+                                    修改时间 <strong>必填项</strong>
+                                </mat-error>
+                            </mat-form-field> <span *ngIf="row.id!=selectedId">{{row.Mtime}}</span> </mat-cell>
+                    </ng-container>
+
+                    <!-- Delete Column -->
+                    <ng-container matColumnDef="delete">
+                        <mat-header-cell style="text-align: center;min-width: 54px" *matHeaderCellDef mat-sort-header> 删除 </mat-header-cell>
+                        <mat-cell style="text-align: center;min-width: 54px" *matCellDef="let row">
+                            <button mat-button color="primary" (click)="deletePost(row.id)" style="min-width:0">
+                              <mat-icon >delete</mat-icon>
+                            </button>
+                        </mat-cell>
+                    </ng-container>
+                    <!-- Delete Column -->
+                    <ng-container matColumnDef="edit">
+                        <mat-header-cell style="text-align: center;min-width: 54px" *matHeaderCellDef at-sort-header>
+                            <span>修改</span>
+                        </mat-header-cell>
+                        <mat-cell style="text-align: center;min-width: 54px" *matCellDef="let row">
+                            <button *ngIf="row.id!=selectedId" mat-button color="primary" (click)="editPost(row.id)" style="min-width:0">
+                                <mat-icon >edit</mat-icon>
+                              </button>
+                            <button *ngIf="row.id==selectedId" mat-button color="primary" (click)="savePost(row.id)" style="min-width:0">
+                                    <mat-icon >save</mat-icon>
+                                  </button>
+                        </mat-cell>
+                    </ng-container>
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+                <mat-paginator #paginator [length]="this.dataSize" [pageIndex]="0" [pageSize]="25" [pageSizeOptions]="[5, 10, 25, 100]">
+                </mat-paginator>
+            </div>
+        </mat-card-content>
+        <mat-card-footer class="button-row">
+            <button mat-button mat-raised-button color="primary" (click)="addCashStatement()">
+              <mat-icon >add</mat-icon>增加库存
+            </button>
+            <button mat-button mat-raised-button color="primary" (click)="delAllcashStatement()">
+              <mat-icon >delete</mat-icon>删除全部库存
+            </button>
+        </mat-card-footer>
+    </mat-card>
+</div>

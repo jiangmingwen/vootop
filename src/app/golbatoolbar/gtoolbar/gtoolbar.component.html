@@ -1,0 +1,130 @@
+<div>
+  <mat-toolbar color="primary" class="header-toolbar">
+    <!-- 左侧菜单伸缩触发按钮 -->
+    <button type="button" mat-button (click)="sidemenu.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <!-- 语言选择 -->
+    <div class="language">
+      <!-- <mat-icon>language</mat-icon> -->
+      <!-- floatPlaceholder属性设置placeholder浮动状态 [floatPlaceholder]="always" [ariaLabel]="always"-->
+      <mat-select placeholder="language" name="language" [value]="selectedLanguage" >
+        <mat-option *ngFor="let lg of languages" [value]="lg">
+          {{ lg }}
+        </mat-option>
+      </mat-select>
+    </div>
+    <!-- 返回、全屏、刷新 -->
+    <button appToggleFullscreen mat-icon-button>
+      <mat-icon>fullscreen</mat-icon>
+    </button>
+    <div class="" >
+      <button aria-haspopup="true" class="ml-xs mat-icon-button" mat-icon-button="" >
+        <span class="mat-button-wrapper">
+          <mat-icon class="mat-icon material-icons" role="img" aria-hidden="true">arrow_back</mat-icon>
+        </span>
+        <div class="mat-button-ripple mat-ripple mat-button-ripple-round" mat-ripple=""></div>
+        <div class="mat-button-focus-overlay"></div>
+      </button>
+      <button aria-haspopup="true" class="ml-xs mat-icon-button" mat-icon-button="">
+        <span class="mat-button-wrapper">
+          <mat-icon class="mat-icon material-icons" role="img" aria-hidden="true">refresh</mat-icon>
+        </span>
+        <div class="mat-button-ripple mat-ripple mat-button-ripple-round" mat-ripple=""></div>
+        <div class="mat-button-focus-overlay"></div>
+      </button>
+    </div>
+    <!-- 企业名 -->
+    <span class="company-name">vootop</span>
+    <!-- 角色切换 -->
+    <div class="role">
+      <mat-icon>person</mat-icon>
+      <mat-select placeholder="role" class="" name="role"  [value]="selectedRole">
+        <mat-option *ngFor="let role of roles" [value]="role.id">
+          {{ role.name }}
+        </mat-option>
+      </mat-select>
+    </div>
+    <!-- 提醒事件 -->
+    <button (click)="end.toggle()" mat-icon-button class="ml-xs overflow-visible">
+      <mat-icon>notifications</mat-icon>
+      <span class="notification-label">5</span>
+    </button>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="content-container">
+    <!-- 左边菜单 -->
+    <mat-sidenav #sidemenu >
+      <div class="nav-body">
+          <mat-list class="">
+            <app-nav-item *ngFor = "let navItem of navItems.getAll() " [navItem]="navItem"
+            (selected)="navSelect($event)">
+      
+            </app-nav-item>
+          </mat-list>
+        </div>
+    </mat-sidenav>
+    <!-- 右侧提醒事件 -->
+    <mat-sidenav #end align="end" class="chat-panel" mode="over" opened="false">
+      <app-tab-group></app-tab-group>
+      
+    </mat-sidenav>
+
+    <!-- <mat-card>
+      <mat-card-header class="juzhonhg">
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Angular</mat-card-title>
+        <mat-card-subtitle>Material 2</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="../../../assets/images/bg3.jpg" height="400px">
+      <mat-card-content>
+        <p>
+          Material Design components for Angular
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card> -->
+    <!-- <mat-sidenav-content cdkscrollable> -->
+      <div class="content-main">
+        <router-outlet></router-outlet>
+      </div>
+    <!-- </mat-sidenav-content> -->
+
+    <button mat-mini-fab color="primary" class="setting-button" (click)="open()">
+      <mat-icon>settings</mat-icon>
+    </button>
+    <!-- 右下角设置 -->
+    <mat-card class="setting-panel" *ngIf="menuShow">
+      <button mat-icon-button class="float-right" (click)="close()"
+              style="width: auto!important; ">
+        <mat-icon class="mat-24" aria-label="Example icon-button with a heart icon">close</mat-icon>
+      </button>
+      <mat-list class="">
+        <mat-list-item>
+          <button type="button" mat-button >
+            <mat-icon>touch_app</mat-icon>
+            签到
+          </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button type="button" mat-button >
+            <mat-icon>touch_app</mat-icon>
+            签退
+          </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button type="button" mat-button >
+            <mat-icon>settings</mat-icon>
+            设置
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </mat-card>
+
+
+  </mat-sidenav-container>
+  
+</div>

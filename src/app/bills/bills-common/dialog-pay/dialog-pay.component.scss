@@ -1,0 +1,28 @@
+$buttonBgColor:#3f51b5;
+h2 {
+    margin: 0;
+}
+.bill-color1{
+    color:$buttonBgColor;
+}
+
+.bill-numBtn{
+   background-color: $buttonBgColor;
+   border: 1px solid #fff;
+   color: #fff;
+}
+.bill-info{
+    background:#333;
+    color: #fff;
+    border:2px solid #FFF;
+    margin-left: 10px;
+} 
+
+
+.bill-num-screen {
+    padding: 2px 5px;
+    background:#333;
+    color: #fff;
+    margin-bottom: 5px;
+    min-height: 26px;
+}

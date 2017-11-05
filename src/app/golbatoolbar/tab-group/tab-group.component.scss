@@ -1,0 +1,42 @@
+.tab-group {
+  border: 1px solid #e8e8e8;
+  width: 40vw;
+}
+.mat-list-item-content {
+  height: 72px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 16px;
+  position: relative;
+  cursor: pointer;
+  font-size: 0.875rem !important;
+  .mat-list-text {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 16px;
+    >* {
+        margin: 0;
+        padding: 0;
+        font-weight: 400;
+        font-size: inherit;
+    }
+    .mat-line {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+      box-sizing: border-box;
+    }
+    .mat-text-muted {
+      color: rgba(0, 0, 0, 0.54) !important;
+    }
+    .text-md {
+        font-size: 80% !important;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<mat-tab-group>
+  <mat-tab>
+    <ng-template mat-tab-label>员工留言</ng-template>
+    <mat-card-content>
+      <div *ngFor="let staff of staffList;index as i;
+        " fxLayout="row" fxLayoutWrap fxLayoutGap="20px" class="staff-item">
+        <div class="staff-img">
+          <img src="{{staff.img}}" alt="" class="radius-circle">
+        </div>
+        <div fxLayout="column" fxLayoutWrap fxLayoutGap="20px" fxFlexAlign="center" class="staff-message">
+          <div class="text-mat mt10">{{staff.name}}</div>
+          <div class="text-xs-center my-header-subtitle"><small>{{staff.words}}</small></div>
+        </div>
+        <div>
+          <button mat-icon-button>
+            <mat-icon>more</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-tab>
+</mat-tab-group>

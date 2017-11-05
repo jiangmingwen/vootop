@@ -1,0 +1,59 @@
+<div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center center">
+  <div *ngFor="let item of allBills" (mouseenter)="sidenav.open()" (mouseleave)="sidenav.close()" class="bill-card" fxFlex.xs="100"
+    fxFlex="50" fxFlex.md="33" fxFlex.xl="25" fxFlex.lg="25">
+    <mat-card class="bill-item">
+      <div class="bill-main">
+          <img *ngIf="item.type === 'restaurant'" src="../../../assets/images/tablee.jpg" alt="billImg" title="{{item.name}}">
+          <img *ngIf="item.type === 'send'" src="../../../assets/images/lvs.jpg" alt="billImg" title="{{item.name}}">
+          <img *ngIf="item.type === 'pack'" src="../../../assets/images/empo.jpg" alt="billImg" title="{{item.name}}">
+      </div>
+      <div class="bill-footer" fxLayout="row">
+        <div fxFlex="50" fxLayoutAlign="start" fxLayout="column">
+          <div>
+            {{item.name}}
+          </div>
+          <div *ngIf="item.type === 'restaurant'" fxLayout="row">
+            <mat-icon matTooltip="餐厅消费" matTooltipPosition="above" svgIcon="restaurant"></mat-icon>
+            <div class="bill-tableNum" matTooltip="餐桌编号" matTooltipPosition="above">{{item.tableNum}}</div>
+          </div>
+          <div *ngIf="item.type === 'pack'">
+            <mat-icon matTooltip="打包" matTooltipPosition="after" svgIcon="pack"></mat-icon>
+          </div>
+          <div *ngIf="item.type === 'send'">
+            <mat-icon matTooltip="送包" matTooltipPosition="after" svgIcon="send">send</mat-icon>
+          </div>
+        </div>
+        <div fxFlex="50" fxLayoutAlign="center" fxLayout="column">
+          <div fxLayoutAlign="end">
+            ￥ {{item.price}}
+          </div>
+        </div>
+      </div>
+    </mat-card>
+    <div *ngIf="item.paid" class="bill-sale">
+      <span>Sale</span>
+    </div>
+    <mat-sidenav fxLayout="row" fxLayoutAlign="center" #sidenav class="bill-sidenav">
+      <mat-list fxLayout="column" fxLayoutAlign="space-around ">
+        <mat-list-item fxLayoutAlign="center" (click)="onIconClick(item,0)">
+          <mat-icon matTooltip="支付" matTooltipPosition="before">shopping_basket</mat-icon>
+        </mat-list-item>
+        <mat-list-item fxLayout="column" fxLayoutAlign="center" (click)="onIconClick(item,1)">
+          <mat-icon matTooltip="桌子合并" matTooltipPosition="before">favorite</mat-icon>
+        </mat-list-item>
+        <mat-list-item fxLayout="column" fxLayoutAlign="center" (click)="onIconClick(item,2)">
+          <mat-icon matTooltip="换桌" matTooltipPosition="before">share</mat-icon>
+        </mat-list-item>
+        <mat-list-item fxLayout="column" fxLayoutAlign="center" (click)="onIconClick(item,3)">
+          <mat-icon matTooltip="查看GPS路线" matTooltipPosition="before">shopping_basket</mat-icon>
+        </mat-list-item>
+        <mat-list-item fxLayout="column" fxLayoutAlign="center" (click)="onIconClick(item,4)">
+          <mat-icon matTooltip="修改客户资料" matTooltipPosition="before">favorite</mat-icon>
+        </mat-list-item>
+        <mat-list-item fxLayout="column" fxLayoutAlign="center" (click)="onIconClick(item,5)">
+          <mat-icon matTooltip="打印发票" matTooltipPosition="before">bookmark</mat-icon>
+        </mat-list-item>
+      </mat-list>
+    </mat-sidenav>
+  </div>
+</div>

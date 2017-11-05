@@ -1,0 +1,27 @@
+<div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource">
+
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef> id </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="sum">
+            <mat-header-cell *matHeaderCellDef> 金额 </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.sum}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="time">
+            <mat-header-cell *matHeaderCellDef> 删除时间 </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.time}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> 删除人姓名 </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>

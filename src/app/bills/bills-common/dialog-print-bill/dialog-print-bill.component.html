@@ -1,0 +1,52 @@
+<h2 mat-dialog-title>FACTURE</h2>
+<mat-dialog-content fxLayout="column" fxLayoutAlign="center">
+  <div fxLayout="column" fxLayoutAlign="center">
+    <div fxLayout="row" fxLayoutGap="10px">
+      <mat-form-field fxFlex="50">
+        <input matInput placeholder="DATE :" value="{{date}}" type="text">
+      </mat-form-field>
+      <mat-form-field fxFlex="50">
+        <input matInput placeholder="No.TABLE :" value="L" type="text">
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutGap="10px">
+      <mat-form-field fxFlex="50">
+        <input matInput placeholder="CV. :" value="1" type="text">
+      </mat-form-field>
+      <mat-form-field fxFlex="50">
+        <input matInput placeholder="REPAS :" value="1" type="text">
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutGap="10px">
+      <mat-form-field fxFlex="50">
+        <input matInput placeholder="MONTANT :" value="160.00" type="text">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Total non alc :" value="160.00" type="text">
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutGap="10px">
+      <mat-form-field fxFlex="50">
+        <input matInput placeholder="Total  alc :" value="160.00" type="text">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="EX. :" value="1" type="text">
+      </mat-form-field>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions fxLayout="row">
+  <div fxFlex="50" fxHide.xs fxLayoutAlign="center">
+    <button mat-raised-button color="primary" fxFlex="50" mat-dialog-close>[ENTER] Valider</button>
+  </div>
+  <div fxFlex="50" fxHide.gt-xs fxLayoutAlign="center">
+    <button mat-raised-button color="primary" fxFlex="50" mat-dialog-close>[ENTER]<br> Valider</button>
+  </div>
+
+  <div fxFlex="50" fxHide.gt-xs fxLayoutAlign="center">
+    <button mat-raised-button color="primary" fxFlex="50" [mat-dialog-close]="true">[Echap]<br> Annuler</button>
+  </div>
+  <div fxFlex="50" fxHide.xs fxLayoutAlign="center">
+    <button mat-raised-button color="primary" fxFlex="50" [mat-dialog-close]="true">[Echap] Annuler</button>
+  </div>
+</mat-dialog-actions>

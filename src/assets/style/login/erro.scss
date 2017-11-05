@@ -1,0 +1,104 @@
+//错误码背景颜色
+$error-title-bg-color:#3f51b5;
+//混合器 弹性布局
+@mixin flexbox {
+  display: -webkit-box;//老版本语法，safari,ios,安卓，老版本的webkit内核浏览器
+  display: -webkit-flex;//新版本语法，chrome21+
+  display: -moz-flex;//新版本，firefox
+  display: -ms-flexbox;
+  display: flex;
+}
+//主轴方向
+@mixin flex-direction{
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+//主轴上对齐方式
+@mixin justify-content{
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+//交叉轴上对齐方式 居中
+@mixin align-items{
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -moz-align-items: center;
+  align-items: center;
+}
+//项目的放大比例、项目的缩小比例、分配多余空间之前项目占据的主轴空间
+@mixin flex{
+  -webkit-box-flex: 1;
+  -moz-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+.session {
+  position: relative;
+  z-index: 4000;
+  min-height: 100vh;
+  @include flexbox;
+  @include flex-direction;
+}
+
+.session-content {
+  padding: 40px 1rem;
+  @include flexbox;
+  @include align-items;
+  @include justify-content;
+  @include flex;
+  @include flex-direction;
+  min-height: 100%;
+  &.text-xs-center{
+    text-align: center !important;
+    .mat-text-muted{
+      color: rgba(0, 0, 0, 0.54) !important;
+    }
+  }
+}
+
+.error-title {
+  font-size: 150px;
+  line-height: 1.2;
+  font-weight: 900;
+  display: inline-table;
+  position: relative;
+  background: $error-title-bg-color;
+  color: #fff;
+  padding: 0 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0 0 1rem;
+  //noinspection ALL
+  &:after {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: '';
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: transparent;
+    border-top-color: $error-title-bg-color;
+    border-width: 8px;
+    margin-left: -8px;
+  }
+}
+
+.error-subtitle {
+  font-size: 32px;
+  font-weight: 300;
+}
+// 验证成功字体颜色
+.verif-ok-color{
+  color: green;
+}
+// 验证失败字体颜色
+.verif-no-color{
+  color: red;
+}
