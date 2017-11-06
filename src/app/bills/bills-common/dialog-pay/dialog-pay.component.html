@@ -2,7 +2,7 @@
 <mat-dialog-content fxLayout="column" fxLayoutAlign="center" class="bills-dialog">
   <div fxLayout="row" fxFlex="80" fxLayout.xs="column" fxFlex.xs="90">
     <div fxLayout="column" fxFlex="50" fxFlex.xs="100">
-      <mat-toolbar fxFlex="15" class="bill-color1">LIVRAISON</mat-toolbar>
+      <mat-toolbar fxFlex="15" class="bill-color1">{{payType}}</mat-toolbar>
       <div style="height:30px;" class="bill-num-screen" fxLayoutAlign="end">{{calcResult}}</div>
       <mat-grid-list cols="4" rowHeight="2:1" fxFlex="60">
         <mat-grid-tile *ngFor="let item of numBtnArr" [colspan]="item.colspan" [rowspan]="item.rowspan">

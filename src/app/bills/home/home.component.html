@@ -87,9 +87,9 @@
           <ng-container matColumnDef="type">
             <mat-header-cell *matHeaderCellDef fxLayoutAlign="center"> 配送 </mat-header-cell>
             <mat-cell *matCellDef="let element" fxLayoutAlign="center">
-              <div *ngIf="element.type === 'pack'">打包</div>
-              <div *ngIf="element.type === 'send'">送包</div>
-              <div *ngIf="element.type === 'restaurant'">餐馆就餐</div>
+              <ng-container *ngIf="element.type === 'pack'">打包</ng-container>
+              <ng-container *ngIf="element.type === 'send'">送包</ng-container>
+              <ng-container *ngIf="element.type === 'restaurant'">餐馆就餐</ng-container>
             </mat-cell>
           </ng-container>
 
