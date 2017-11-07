@@ -12,15 +12,15 @@
           <div>
             {{item.name}}
           </div>
-          <div *ngIf="item.type === 'restaurant'" fxLayout="row">
-            <mat-icon matTooltip="餐厅消费" matTooltipPosition="above" svgIcon="restaurant"></mat-icon>
+          <div *ngIf="item.type === 'restaurant'" fxLayout="row" class="bills-type">
+            <img src="assets/images/restaurant.png" alt="restaurant" matTooltip="餐厅消费" matTooltipPosition="above">
             <div class="bill-tableNum" matTooltip="餐桌编号" matTooltipPosition="above">{{item.tableNum}}</div>
           </div>
-          <div *ngIf="item.type === 'pack'">
-            <mat-icon matTooltip="打包" matTooltipPosition="after" svgIcon="pack"></mat-icon>
+          <div *ngIf="item.type === 'pack'" class="bills-type">
+              <img src="assets/images/pack.png" alt="pack" matTooltip="打包" matTooltipPosition="after">
           </div>
-          <div *ngIf="item.type === 'send'">
-            <mat-icon matTooltip="送包" matTooltipPosition="after" svgIcon="send">send</mat-icon>
+          <div *ngIf="item.type === 'send'" class="bills-type">
+              <img src="assets/images/send.png" alt="send" matTooltip="送包" matTooltipPosition="after">
           </div>
         </div>
         <div fxFlex="50" fxLayoutAlign="center" fxLayout="column">

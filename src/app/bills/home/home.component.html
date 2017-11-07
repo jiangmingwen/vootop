@@ -63,30 +63,30 @@
     </mat-form-field>
     <div class="tab-content">
       <mat-card>
-        <mat-table #table [dataSource]="dataSource">
-          <ng-container matColumnDef="id">
-            <mat-header-cell *matHeaderCellDef fxLayoutAlign="center"> 编号. </mat-header-cell>
-            <mat-cell *matCellDef="let element" fxLayoutAlign="center"> {{element.id}} </mat-cell>
+        <mat-table #table [dataSource]="dataSource" style="width:100%;overflow:auto">
+          <ng-container matColumnDef="id" >
+            <mat-header-cell *matHeaderCellDef fxLayoutAlign="center" style="min-width:30px;"> 编号. </mat-header-cell>
+            <mat-cell *matCellDef="let element" fxLayoutAlign="center" style="min-width:30px;"> {{element.id}} </mat-cell>
           </ng-container>
           <ng-container matColumnDef="name">
-            <mat-header-cell *matHeaderCellDef fxLayoutAlign="center"> 名字 </mat-header-cell>
-            <mat-cell *matCellDef="let element" fxLayoutAlign="center"> {{element.name}} </mat-cell>
+            <mat-header-cell *matHeaderCellDef fxLayoutAlign="center"  style="min-width:50px;"> 名字 </mat-header-cell>
+            <mat-cell *matCellDef="let element" fxLayoutAlign="center"  style="min-width:50px;"> {{element.name}} </mat-cell>
           </ng-container>
           <ng-container matColumnDef="paid">
-            <mat-header-cell *matHeaderCellDef fxLayoutAlign="center"> 是否支付 </mat-header-cell>
-            <mat-cell *matCellDef="let element" fxLayoutAlign="center"> {{element.paid?'已支付':'未支付'}} </mat-cell>
+            <mat-header-cell *matHeaderCellDef fxLayoutAlign="center"  style="min-width:65px;"> 是否支付 </mat-header-cell>
+            <mat-cell *matCellDef="let element" fxLayoutAlign="center"  style="min-width:65px;"> {{element.paid?'已支付':'未支付'}} </mat-cell>
           </ng-container>
           <ng-container matColumnDef="tableNum">
-            <mat-header-cell *matHeaderCellDef fxLayoutAlign="center"> 桌号 </mat-header-cell>
-            <mat-cell *matCellDef="let element" fxLayoutAlign="center"> {{element.tableNum}} </mat-cell>
+            <mat-header-cell *matHeaderCellDef fxLayoutAlign="center"  style="min-width:35px;"> 桌号 </mat-header-cell>
+            <mat-cell *matCellDef="let element" fxLayoutAlign="center"  style="min-width:35px;"> {{element.tableNum}} </mat-cell>
           </ng-container>
           <ng-container matColumnDef="price">
-            <mat-header-cell *matHeaderCellDef fxLayoutAlign="center"> 价格 </mat-header-cell>
-            <mat-cell *matCellDef="let element" fxLayoutAlign="center"> {{element.price}} </mat-cell>
+            <mat-header-cell *matHeaderCellDef fxLayoutAlign="center"  style="min-width:50px;"> 价格 </mat-header-cell>
+            <mat-cell *matCellDef="let element" fxLayoutAlign="center"  style="min-width:50px;"> {{element.price}} </mat-cell>
           </ng-container>
           <ng-container matColumnDef="type">
-            <mat-header-cell *matHeaderCellDef fxLayoutAlign="center"> 配送 </mat-header-cell>
-            <mat-cell *matCellDef="let element" fxLayoutAlign="center">
+            <mat-header-cell *matHeaderCellDef fxLayoutAlign="center"  style="min-width:65px;"> 配送 </mat-header-cell>
+            <mat-cell *matCellDef="let element" fxLayoutAlign="center"  style="min-width:65px;">
               <ng-container *ngIf="element.type === 'pack'">打包</ng-container>
               <ng-container *ngIf="element.type === 'send'">送包</ng-container>
               <ng-container *ngIf="element.type === 'restaurant'">餐馆就餐</ng-container>

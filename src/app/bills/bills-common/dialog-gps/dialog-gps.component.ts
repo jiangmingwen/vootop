@@ -8,11 +8,11 @@ import { BillHttpService } from '../../service/bills.service';
   styleUrls: ['./dialog-gps.component.scss']
 })
 export class DialogGpsComponent implements OnInit {
-
-  key: string = 'AIzaSyBcz263d3pgSKOBwWZJWdZrJSB0_EmH360';
   title: string = 'My first AGM project';
   lat: number = 51.678418;
   lng: number = 7.809007;
+  lat1: number = 51.678418;
+  lng1: number = 7.00000;
   ngOnInit() {
 
   }
@@ -25,4 +25,6 @@ export class DialogGpsComponent implements OnInit {
   onNoClick(): void {
     this.dialogRef.close();
   }
+
+
 }

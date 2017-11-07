@@ -41,7 +41,7 @@ import { DialogPrintBillComponent } from './dialog-print-bill/dialog-print-bill.
     MatSnackBarModule,
     FlexLayoutModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBcz263d3pgSKOBwWZJWdZrJSB0_EmH360'
+      apiKey: 'AIzaSyAAWkO_UTOdzamFR93bOiLs0oBMIM22Rdw'
     }),
   ],
   declarations: [

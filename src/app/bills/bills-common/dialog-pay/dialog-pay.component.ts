@@ -7,7 +7,7 @@ import { MatIconRegistry, MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatSnackBar 
 })
 export class DialogPayComponent implements OnInit {
   constructor(
-  public  dialogRef: MatDialogRef<DialogPayComponent>, @Inject(MAT_DIALOG_DATA) public data: any,public snackBar: MatSnackBar) { }
+    public dialogRef: MatDialogRef<DialogPayComponent>, @Inject(MAT_DIALOG_DATA) public data: any, public snackBar: MatSnackBar) { }
   detail: any[];
   numBtnArr: any[] = [];
   showInfo: boolean = false;
@@ -18,6 +18,7 @@ export class DialogPayComponent implements OnInit {
   currentTypeNum: number = 3;
 
   ngOnInit() {
+    console.log(this.data)
     this.detail = [];
     let num = ['7', '8', '9', 'C', '4', '5', '6', '←', '1', '2', '3', '-', '0', '*', '/', '+', '.', 'ENTER(=)'];
     for (let i = 0; i < num.length; i++) {

@@ -22,27 +22,15 @@ export class BillsCommonComponent implements OnInit {
   private dialogAnimal: string;
 
   constructor(
-    public iconRegistry: MatIconRegistry,
     public sanitizer: DomSanitizer,
     public dialog: MatDialog,
-
   ) {
-    iconRegistry.addSvgIcon(
-      'pack',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/images/svg/pack.svg'));
-    iconRegistry.addSvgIcon(
-      'restaurant',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/images/svg/resturant.svg'));
-    iconRegistry.addSvgIcon(
-      'send',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/images/svg/send.svg'));
   }
 
   ngOnInit() {
   }
 
   onIconClick(item: any, index: number): void {
-    console.log(item, index);
     this.dialogCategory = index;
     this.openDialog(index, item);
   }
@@ -53,7 +41,6 @@ export class BillsCommonComponent implements OnInit {
 
   openDialog(index: number, item: any): void {
     let dialogRef;
-    console.log(this.isXsMode(), 'xsmode')
     switch (index) {
       case 0:
         if (this.isXsMode()) {
@@ -99,7 +86,6 @@ export class BillsCommonComponent implements OnInit {
           data: item
         });
         break;
-
     }
   }
 
