@@ -1,0 +1,280 @@
+<div class="app mat-typography" #root dir="ltr" [ngClass]="{'app-dark': dark, 'boxed': boxed, 'collapsed-sidebar': collapseSidebar, 'compact-sidebar': compactSidebar}">
+  <mat-toolbar fxLayout="row" class="main-header" color="primary" fxLayoutAlign="center center">
+    <button (click)="sidemenu.toggle()" mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <button aria-haspopup="true" class="ml-xs mat-icon-button" mat-icon-button="">
+      <span class="mat-button-wrapper">
+        <mat-icon class="mat-icon material-icons" role="img" aria-hidden="true">arrow_back</mat-icon>
+      </span>
+      <div class="mat-button-ripple mat-ripple mat-button-ripple-round" mat-ripple=""></div>
+      <div class="mat-button-focus-overlay"></div>
+    </button>
+    <button aria-haspopup="true" class="ml-xs mat-icon-button" mat-icon-button="">
+      <span class="mat-button-wrapper">
+        <mat-icon class="mat-icon material-icons" role="img" aria-hidden="true">refresh</mat-icon>
+      </span>
+      <div class="mat-button-ripple mat-ripple mat-button-ripple-round" mat-ripple=""></div>
+      <div class="mat-button-focus-overlay"></div>
+    </button>
+    <button appToggleFullscreen mat-icon-button fxHide.xs>
+      <mat-icon>fullscreen</mat-icon>
+    </button>
+
+    <div class="branding" fxFlex="" fxLayoutAlign="center">
+      <div class="">VOOTOP</div>
+    </div>
+    <div class="language">
+      <mat-select  fxHide.xs placeholder="language" name="language" [value]="selectedLanguage">
+        <mat-option *ngFor="let lg of languages" [value]="lg" >
+          {{ lg }}
+        </mat-option>
+      </mat-select>
+      <button mat-icon-button [matMenuTriggerFor]="menu" fxShow.xs>
+        <mat-icon matPrefix>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item *ngFor="let lang of languages">
+          <mat-icon>dialpad</mat-icon>
+          <span>{{lang}}</span>
+        </button>
+      </mat-menu>
+    </div>
+    <button (click)="end.toggle()" mat-icon-button fxHide.xs>
+      <mat-icon>notifications</mat-icon>
+      <span class="notification-label">5</span>
+    </button>
+    <button [mat-menu-trigger-for]="user" mat-icon-button>
+      <mat-icon>person</mat-icon>
+    </button>
+    <mat-menu #user="matMenu" x-position="before">
+      <button (click)="end.toggle()" mat-menu-item fxHide.gt-xs>
+        <mat-icon>notifications</mat-icon>
+        5
+      </button>
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        Settings
+      </button>
+      <button mat-menu-item>
+        <mat-icon>account_box</mat-icon>
+        Profile
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        Disable notifications
+      </button>
+      <button mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        Sign Out
+      </button>
+    </mat-menu>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="app-inner">
+    <mat-sidenav #sidemenu class="sidebar-panel" id="sidebar-panel" [mode]="isOver() ? 'over' : 'side'" [opened]="!isOver()"
+      (mouseover)="menuMouseOver()" (mouseout)="menuMouseOut()">
+      <mat-nav-list class="navigation" >
+        <mat-list-item *ngFor="let menuitem of menuItems;let i = index;" [ngClass]="{'open':currentIndex === i ? true:false}">
+          <a (click)="listItemClick(menuitem)" class="relative" [routerLink]="[menuitem.state]" *ngIf="menuitem.type === 'routerLink'">
+            <mat-icon>{{ menuitem.icon }}</mat-icon>
+            <span>{{ menuitem.name }}</span>
+            <span fxFlex></span>
+            <span class="menu-badge mat-{{ badge.type }}" *ngFor="let badge of menuitem.badge">{{ badge.value }}</span>
+          </a>
+          <a (click)="listItemClick(menuitem)" class="relative" href="{{menuitem.state}}" *ngIf="menuitem.type === 'link'">
+            <mat-icon>{{ menuitem.icon }}</mat-icon>
+            <span>{{ menuitem.name }}</span>
+            <span fxFlex></span>
+            <span class="menu-badge mat-{{ badge.type }}" *ngFor="let badge of menuitem.badge">{{ badge.value }}</span>
+          </a>
+          <a (click)="listItemClick(menuitem)" class="relative" href="{{menuitem.state}}" target="_blank" *ngIf="menuitem.type === 'targetLink'">
+            <mat-icon>{{ menuitem.icon }}</mat-icon>
+            <span>{{ menuitem.name }}</span>
+            <span fxFlex></span>
+            <span class="menu-badge mat-{{ badge.type }}" *ngFor="let badge of menuitem.badge">{{ badge.value }}</span>
+          </a>
+          <a (click)="listItemClick(menuitem,i)" class="relative" href="javascript:;" *ngIf="menuitem.type === 'sub'">
+            <mat-icon>{{ menuitem.icon }}</mat-icon>
+            <span>{{ menuitem.name }}</span>
+            <span fxFlex></span>
+            <span class="menu-badge mat-{{ badge.type }}" *ngFor="let badge of menuitem.badge">{{ badge.value }}</span>
+            <mat-icon class="menu-caret menu-arrow-rotate" [ngClass]="{'children-open':currentIndex === i ? true:false}">arrow_drop_down</mat-icon>
+          </a>
+          <mat-nav-list class="sub-menu" *ngIf="menuitem.type === 'sub'">
+            <mat-list-item *ngFor="let childitem of menuitem.children" routerLinkActive="open">
+              <a (click)="listItemClick(menuitem)" [routerLink]="['/', menuitem.state, childitem.state ]" class="relative">{{ childitem.name }}</a>
+            </mat-list-item>
+          </mat-nav-list>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav #end align="end" class="chat-panel" mode="over" opened="false">
+      <mat-tab-group [selectedIndex]="1" mat-stretch-tabs>
+        <mat-tab>
+          <ng-template mat-tab-label>Today</ng-template>
+          <div class="scroll">
+            <mat-list class="pt-1 pb-1">
+              <mat-list-item>
+                <div fxLayout="column">
+                  <h1 class="ma-0">{{ today | date:'EEEE' }}</h1>
+                  <h3 class="mat-text-muted ma-0">
+                    <span>{{ today | date:'dd' }}</span>&nbsp;
+                    <span>{{ today | date:'MMMM' }}</span>
+                  </h3>
+                </div>
+              </mat-list-item>
+            </mat-list>
+            <mat-nav-list>
+              <mat-divider></mat-divider>
+              <h3 mat-subheader class="text-uppercase font-weight-bold">Stocks</h3>
+              <mat-list-item>
+                <a mat-line href="javascript:;">NASDAQ</a>
+                <span class="mat-text-muted text-mat mr-xs ml-xs">4,492.87</span>
+                <span>-0.29%</span>
+              </mat-list-item>
+              <mat-list-item>
+                <a mat-line href="javascript:;">NYSE</a>
+                <span class="mat-text-muted text-mat mr-xs ml-xs">10,692.07</span>
+                <span>-0.53%</span>
+              </mat-list-item>
+              <mat-list-item>
+                <a mat-line href=javascript:;>DOW J</a>
+                <span class="mat-text-muted text-mat mr-xs ml-xs">17,046.81</span>
+                <span>-0.14%</span>
+              </mat-list-item>
+              <mat-list-item>
+                <a mat-line href="javascript:;">APPL</a>
+                <span class="mat-text-muted text-mat mr-xs ml-xs">100,89</span>
+                <span>+0.75%</span>
+              </mat-list-item>
+              <mat-divider></mat-divider>
+              <h3 mat-subheader class="text-uppercase font-weight-bold">Weather</h3>
+              <mat-list-item>
+                <a mat-line href="javascript:;">{{ today | date:'shortTime' }}</a>
+                <p mat-line class="mat-text-muted">London</p>
+                <span class="mat-h1 mr-1">
+                  <span class="pe-is-w-blizzard"></span>
+                </span>
+                <span class="mat-h1">26°</span>
+              </mat-list-item>
+              <mat-divider></mat-divider>
+              <h3 mat-subheader class="text-uppercase font-weight-bold">Todo</h3>
+              <mat-list-item>
+                <a mat-line href="javascript:;">Learn Angular 2.0</a>
+                <p mat-line class="mat-text-muted text-mat">2:45PM</p>
+              </mat-list-item>
+              <mat-list-item>
+                <a mat-line href="javascript:;">Learn Angular Material</a>
+                <p mat-line class="mat-text-muted text-mat">3:20PM</p>
+              </mat-list-item>
+              <mat-list-item>
+                <a mat-line href="javascript:;">Write documentation</a>
+                <p mat-line class="mat-text-muted text-mat">6:00PM</p>
+              </mat-list-item>
+              <mat-divider class="mt-xs mb-xs"></mat-divider>
+              <h3 mat-subheader class="text-uppercase font-weight-bold">Stats</h3>
+              <mat-list-item>
+                <p class="text-mat" mat-line>Local Storage (4023 / 10690)</p>
+                <mat-progress-bar mat-line mode="determinate" color="warn" value="40"></mat-progress-bar>
+              </mat-list-item>
+              <mat-list-item>
+                <p class="text-mat" mat-line>Cloud Storage (700 / 1030)</p>
+                <mat-progress-bar mat-line mode="determinate" color="accent" value="70"></mat-progress-bar>
+              </mat-list-item>
+              <mat-list-item>
+                <p class="text-mat" mat-line>Local Storage (20 / 100)</p>
+                <mat-progress-bar mat-line mode="determinate" value="20"></mat-progress-bar>
+              </mat-list-item>
+            </mat-nav-list>
+          </div>
+        </mat-tab>
+        <mat-tab>
+          <ng-template mat-tab-label>Notifications</ng-template>
+          <div class="scroll">
+            <mat-nav-list>
+              <mat-list-item>
+                <mat-icon mat-list-avatar class="mat-text-primary">people</mat-icon>
+                <h4 mat-line>Social</h4>
+                <p mat-line>Ligula Purus Adipiscing</p>
+              </mat-list-item>
+              <mat-list-item>
+                <mat-icon mat-list-avatar class="mat-text-warn">local_offer</mat-icon>
+                <h4 mat-line>Promotions</h4>
+                <p mat-line>Etiam Ligula Dapibus</p>
+              </mat-list-item>
+              <mat-list-item>
+                <mat-icon mat-list-avatar class="mat-text-accent">info</mat-icon>
+                <h4 mat-line>Updates</h4>
+                <p mat-line>Sollicitudin Euismod Fringilla</p>
+              </mat-list-item>
+
+              <mat-list-item>
+                <mat-icon mat-list-avatar class="mat-indigo">delete_sweep</mat-icon>
+                <h4 mat-line>Removed 6 items from task list</h4>
+                <span class="text-mat mat-text-muted" mat-line>{{ 1427207139000 | date: 'fullDate' }}</span>
+              </mat-list-item>
+              <mat-list-item>
+                <mat-icon mat-list-avatar>check_circle</mat-icon>
+                <h4 mat-line>Completed 2 projects</h4>
+                <span class="text-mat mat-text-muted" mat-line>{{ 1427412725000 | date: 'fullDate' }}</span>
+              </mat-list-item>
+              <mat-list-item>
+                <mat-icon mat-list-avatar>notifications_paused</mat-icon>
+                <h4 mat-line>Muted notifications</h4>
+                <span class="text-mat mat-text-muted" mat-line>{{ 1427546580000 | date: 'fullDate' }}</span>
+              </mat-list-item>
+              <mat-list-item>
+                <mat-icon mat-list-avatar>person_add</mat-icon>
+                <h4 mat-line>Added Joel to contact list</h4>
+                <span class="text-mat mat-text-muted" mat-line>{{ 1428275520000 | date: 'fullDate' }}</span>
+              </mat-list-item>
+              <mat-list-item>
+                <mat-icon mat-list-avatar>phone_missed</mat-icon>
+                <h4 mat-line>Missed live call from Ellie</h4>
+                <span class="text-mat mat-text-muted" mat-line>{{ 1428830580000 | date: 'fullDate' }}</span>
+              </mat-list-item>
+              <mat-list-item>
+                <mat-icon mat-list-avatar>group_add</mat-icon>
+                <h4 mat-line>You've been added to HR group</h4>
+                <span class="text-mat mat-text-muted" mat-line>{{ 1429363920000 | date: 'fullDate' }}</span>
+              </mat-list-item>
+            </mat-nav-list>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-sidenav>
+    <router-outlet></router-outlet>
+  </mat-sidenav-container>
+
+  <button mat-mini-fab color="warn" class="setting-button" (click)="showSettings = !showSettings" fxHide.xs>
+    <mat-icon>settings</mat-icon>
+  </button>
+
+  <mat-card class="setting-panel" *ngIf="showSettings">
+    <button mat-icon-button class="float-right" (click)="showSettings=false" style="width: auto!important; ">
+      <mat-icon class="mat-24" aria-label="Example icon-button with a heart icon">close</mat-icon>
+    </button>
+    <mat-list class="panel-item-button">
+      <mat-list-item>
+        <button type="button" mat-button>
+          <mat-icon>touch_app</mat-icon>
+          签到
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button type="button" mat-button>
+          <mat-icon>touch_app</mat-icon>
+          签退
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button type="button" mat-button>
+          <mat-icon>settings</mat-icon>
+          设置
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+</div>

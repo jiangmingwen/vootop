@@ -1,0 +1,57 @@
+<form novalidate (ngSubmit)="onSubmit(form)" [formGroup]="form">
+  <div>
+    <h1 mat-dialog-title><span><mat-icon>create</mat-icon>{{modalTitle}}</span></h1>
+  </div>
+  <div mat-dialog-content>
+    <mat-input-container class="full-width">
+      <input matInput placeholder="名称" formControlName="name">
+    </mat-input-container>
+    <mat-input-container class="full-width">
+      <input matInput placeholder="描述" formControlName="desc">
+    </mat-input-container>
+    <mat-input-container class="full-width">
+      <input matInput type="number" placeholder="单价" formControlName="unitPrice">
+    </mat-input-container>
+
+
+    <mat-form-field>
+      <mat-select placeholder="选择税率" [(ngModel)]="taxRatio" formControlName="taxRatio">
+        <mat-option *ngFor="let tax of taxs" [value]="tax.taxRatio">
+          {{tax.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+
+
+    <mat-form-field class="full-width">
+      <input matInput [matDatepicker]="onSelfDatePicker" placeholder="上架日期" formControlName="onSelfDate">
+      <mat-datepicker-toggle matSuffix [for]="onSelfDatePicker"></mat-datepicker-toggle>
+      <mat-datepicker #onSelfDatePicker></mat-datepicker>
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-select placeholder="上级分类" [(ngModel)]="categoryId" formControlName="categoryId" (onClose)="setCategoryName()">
+        <mat-option *ngFor="let c of categorys" [value]="c.id">
+          {{c.categoryName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="子类别" [(ngModel)]="subCategoryId" formControlName="subCategoryId" (onClose)="setSubName()">
+        <mat-option *ngFor="let c of subCategorys" [value]="c.id">
+          {{c.categoryName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+  <mat-dialog-actions class="mat-dialog-footer" align="end">
+    <button mat-dialog-close mat-raised-button type="button">关闭</button>
+    <button type="submit" color="primary"  [disabled]="!form.valid" mat-raised-button>{{modalBtnTitle}}</button>
+  </mat-dialog-actions>
+</form>

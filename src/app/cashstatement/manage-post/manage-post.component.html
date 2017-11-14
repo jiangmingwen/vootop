@@ -1,6 +1,6 @@
 <div fxLayout fxFlexFill fxLayoutGap.xs="0px" fxLayoutAlign="center">
     <!-- class="flex" fxLayout="row" fxLayoutWrap fxLayoutAlign="center center" -->
-    <mat-card fxFlex.xs="100%" fxFlex="80%">
+    <mat-card fxFlex.xs="100" fxFlex="100">
         <mat-card-header>
             <mat-form-field floatPlaceholder="never">
                 <input matInput #filter placeholder="根据发票号码和进货时间搜索">
@@ -10,7 +10,6 @@
             <div class="manage-table-container">
                 <mat-table fxFlexFill #tablePost [dataSource]="dataSource" matSort>
 
-                    <!-- Invoice Column -->
                     <ng-container matColumnDef="Invoice" style=" min-width: 818px;">
                         <mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 120px"> 发票号码 </mat-header-cell>
                         <mat-cell *matCellDef="let row" style="min-width: 120px">
@@ -21,7 +20,6 @@
                                 </mat-error>
                             </mat-form-field>
                             <span *ngIf="row.id!=selectedId">{{row.Invoice}}</span>
-                            <!-- <a routerLink="/manage/posts/{{row.id}}"> {{row.title | truncate: 30 }} </a> -->
                         </mat-cell>
                     </ng-container>
                     <!-- PurchaseTime Column -->
@@ -30,8 +28,7 @@
                         <mat-cell *matCellDef="let row" style="min-width: 126px">
                             <mat-form-field *ngIf="row.id==selectedId">
                                 <input matInput placeholder="进货时间" [(ngModel)]="row.PurchaseTime" [formControl]="PurchaseTimeFormControl">
-                                <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                                <mat-datepicker #picker></mat-datepicker> -->
+                               
                                 <mat-error *ngIf="PurchaseTimeFormControl.hasError('required')">
                                     进货时间 <strong>必填项</strong>
                                 </mat-error>
@@ -82,7 +79,6 @@
                             </mat-form-field> <span *ngIf="row.id!=selectedId">{{row.Mtime}}</span> </mat-cell>
                     </ng-container>
 
-                    <!-- Delete Column -->
                     <ng-container matColumnDef="delete">
                         <mat-header-cell style="text-align: center;min-width: 54px" *matHeaderCellDef mat-sort-header> 删除 </mat-header-cell>
                         <mat-cell style="text-align: center;min-width: 54px" *matCellDef="let row">
@@ -91,7 +87,7 @@
                             </button>
                         </mat-cell>
                     </ng-container>
-                    <!-- Delete Column -->
+
                     <ng-container matColumnDef="edit">
                         <mat-header-cell style="text-align: center;min-width: 54px" *matHeaderCellDef at-sort-header>
                             <span>修改</span>

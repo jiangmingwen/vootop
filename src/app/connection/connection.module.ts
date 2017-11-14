@@ -12,6 +12,7 @@ import { NofoundComponent } from './nofound/nofound.component';
 import { VerifokComponent } from './verifok/verifok.component';
 import { VerifnoComponent } from './verifno/verifno.component';
 import {MaterialModule} from '../shared/material/material.module';
+import { ConnectionHomeComponent } from './connection-home.component';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import {MaterialModule} from '../shared/material/material.module';
     NofoundComponent,
     VerifokComponent,
     VerifnoComponent,
+    ConnectionHomeComponent
   ]
 })
 export class ConnectionModule { }

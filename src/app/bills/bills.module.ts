@@ -7,11 +7,7 @@ import {
   MatTabsModule, MatButtonModule, MatCardModule, MatCheckboxModule, MatDialogModule, MatIconModule, MatInputModule,
   MatTableModule, MatTooltipModule, MatSidenavModule, MatGridListModule, MatDatepickerModule, DateAdapter
 } from '@angular/material';
-
-
-import { BillHttpService } from './service/bills.service';
 import { BillsCommonModule } from './bills-common/bills-common.module';
-
 
 @NgModule({
   imports: [
@@ -27,8 +23,6 @@ import { BillsCommonModule } from './bills-common/bills-common.module';
   ],
   declarations: [
     HomeComponent
-  ],
-
-  providers: [BillHttpService]
+  ]
 })
 export class BillsModule { }

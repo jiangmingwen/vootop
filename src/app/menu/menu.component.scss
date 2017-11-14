@@ -1,0 +1,30 @@
+.language {
+  max-width: 50px;
+}
+
+.setting-button {
+    top: auto;
+    right: 20px;
+    bottom: 1rem;
+    left: auto;
+    position: fixed;
+    z-index: 8;
+  }
+
+
+  .setting-panel{
+    position: fixed;
+    bottom: 6px;
+    right: 6px;
+    width: 250px;
+    z-index: 9;
+    padding: 0;
+    .float-right{
+      float: right;
+      right: 6px;
+    }
+    .panel-item-button button{
+      width: 100%;
+      text-align: left;
+    }
+  }

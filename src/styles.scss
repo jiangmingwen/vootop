@@ -1,22 +1,25 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+.full-width{
+  width: 100%;
+}
 .bills-dialog.mat-dialog-content {
-    padding:0;
-    margin: 0;
-    height: 100%;
+  padding:0;
+  margin: 0;
+  height: 100%;
 }
 @media screen and (max-width: 599px) { 
-    .mat-dialog-container{
-        padding:0;
-    }
-    .bills-dialog.mat-dialog-content{
-        max-height: none;
-    }
+  .mat-dialog-container{
+      padding:0;
+  }
+  .bills-dialog.mat-dialog-content{
+      max-height: none;
+  }
 } 
 .bill-sidenav {
-    .mat-list{
-        .mat-list-item{
-            color:#FFF;
-        }
-    }
+  .mat-list{
+      .mat-list-item{
+          color:#FFF;
+      }
+  }
 }

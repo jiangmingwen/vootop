@@ -1,6 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatIconRegistry, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { BillHttpService } from '../../service/bills.service';
 
 @Component({
   selector: 'app-dialog-gps',
@@ -18,7 +17,6 @@ export class DialogGpsComponent implements OnInit {
   }
 
   constructor(
-    private billHttpService: BillHttpService,
     public dialogRef: MatDialogRef<DialogGpsComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 

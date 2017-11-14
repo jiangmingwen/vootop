@@ -1,0 +1,76 @@
+<h2 mat-dialog-title style="text-align: center;">增加用户信息</h2>
+<mat-dialog-content>
+  <form [formGroup]="form">
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="电话号码1" type="number" [formControl]="form.controls['telOne']">
+      </mat-form-field>
+      <small *ngIf="form.controls['telOne'].hasError('required') && form.controls['telOne'].touched" >电话号码1不能为空</small>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="电话号码2" type="number" [formControl]="form.controls['telTwo']">
+      </mat-form-field>
+      <small *ngIf="form.controls['telTwo'].hasError('required') && form.controls['telTwo'].touched" >电话号码2不能为空</small>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="性别" type="number" [formControl]="form.controls['sex']">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="名字" type="number" [formControl]="form.controls['name']">
+      </mat-form-field>
+      <small *ngIf="form.controls['name'].hasError('required') && form.controls['name'].touched" >名字不能为空</small>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="地址" type="number" [formControl]="form.controls['addr']">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="邮编" type="number" [formControl]="form.controls['zipCode']">
+      </mat-form-field>
+      <small *ngIf="form.controls['zipCode'].hasError('required') && form.controls['zipCode'].touched" >邮编不能空</small>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="城市" type="number" [formControl]="form.controls['city']">
+      </mat-form-field>
+      <small *ngIf="form.controls['city'].hasError('required') && form.controls['city'].touched" >城市不能为空</small>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="邮箱" type="number" [formControl]="form.controls['email']">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="进门密码1" type="number" [formControl]="form.controls['password1']">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="进门密码2" type="number" [formControl]="form.controls['password2']">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="第几栋楼" type="number" [formControl]="form.controls['donghao']">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="第几楼" type="number" [formControl]="form.controls['louhao']">
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <div class="button-group">
+    <button mat-raised-button [mat-dialog-close]="">取消</button>
+    <button mat-raised-button (click)="matDialogClose()">保存</button>
+  </div>
+</mat-dialog-actions>

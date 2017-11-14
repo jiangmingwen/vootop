@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {Router} from '@angular/router';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 const email = new FormControl('', [
@@ -19,19 +19,22 @@ export class RepasswordComponent implements OnInit {
   constructor(private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
-    this.form = this.fb.group( {
+    this.form = this.fb.group({
       email: email,
-    } );
+    });
   }
 
   onSubmit() {
-    this.router.navigate(['./connection/connection']);
+    this.router.navigate(['./']);
   }
   recoverPwd() {
-    this.router.navigate( [ './connection/connection' ] );
+    this.router.navigate(['./repassword']);
   }
   register() {
-    this.router.navigate( [ './connection/connection' ] );
+    this.router.navigate(['./inscription']);
+  }
+  gotoLogin() {
+    this.router.navigate(['./']);
   }
 
 

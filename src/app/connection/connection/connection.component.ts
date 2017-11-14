@@ -24,13 +24,13 @@ export class ConnectionComponent implements OnInit {
     } );
   }
   onSubmit() {
-    this.router.navigate ( [ './connection/connection' ] );
+    this.router.navigate ( [ './main/social' ] );
   }
   recoverPwd() {
-    this.router.navigate ( [ './connection/connection' ] );
+    this.router.navigate ( [ './repassword' ] );
   }
   register() {
-    this.router.navigate ( [ './connection/connection' ] );
+    this.router.navigate ( [ './inscription' ] );
   }
 
 

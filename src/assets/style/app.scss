@@ -1,2 +1,9 @@
+@import "scss/material.variables";
+@import "scss/mixins/bi-app/bi-app-ltr";
+@import "scss/app.variables";
+@import "scss/mixins";
+// Core Styles
+@import "scss/core";
 @import "login/regist";
 @import "login/erro";
+@import "scss/components/_bills";

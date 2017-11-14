@@ -1,10 +1,10 @@
 import { Component, OnInit, Inject, ViewChild } from '@angular/core';
-import { BillHttpService } from '../service/bills.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material'
 import { DataSource } from '@angular/cdk/collections';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of'
+import { VootopHttpService } from '../../shared/vootop-http.service';
 
 @Component({
   selector: 'app-home',
@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   public displayedColumns = ['id', 'name', 'paid', 'tableNum', 'price', 'type'];
   public dataSource;
   constructor(
-    private billHttpService: BillHttpService,
+    private http: VootopHttpService
   ) {
   }
 
@@ -52,11 +52,9 @@ export class HomeComponent implements OnInit {
   }
 
   private getBillInfo(): void {
-    let url = 'assets/mock/bill.json';
-    this.billHttpService.serviceConfig(url, "GET").subscribe(res => {
-      console.log(res, 'com');
-      this.allBillsClone = JSON.parse(JSON.stringify(res.data));
-      this.allBills = res.data;
+    this.http.setHttp('bills', "GET").subscribe(res => {
+      this.allBillsClone = JSON.parse(JSON.stringify(res));
+      this.allBills = res;
       this.onTabsClick('type', 'restaurant');
       this.dataSource = new ExampleDataSource(this);
     })

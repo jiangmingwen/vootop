@@ -1,0 +1,87 @@
+<div class="user-list-bg">
+  <mat-form-field class="filter-input">
+    <input matInput placeholder="输入电话号码或者名字进行搜索" type="email" >
+  </mat-form-field>
+  <mat-card>
+    <mat-card-content>
+      <mat-table #table [dataSource]="dataSource">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="telOne">
+          <mat-header-cell *matHeaderCellDef>手机号码1</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.telOne}}</mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="telTwo">
+          <mat-header-cell *matHeaderCellDef>手机号码2</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.telTwo}}</mat-cell>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="sex">
+          <mat-header-cell *matHeaderCellDef>性别</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.sex}}</mat-cell>
+        </ng-container>
+
+        <!-- Color Column -->
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef>名字</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="addr">
+         <mat-header-cell *matHeaderCellDef>地址</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.addr}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="zipCode">
+          <mat-header-cell *matHeaderCellDef>邮编</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.zipCode}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="city">
+          <mat-header-cell *matHeaderCellDef>地市</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.city}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <mat-header-cell *matHeaderCellDef>邮箱</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.email}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="registerDate">
+          <mat-header-cell *matHeaderCellDef>注册日期</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.registerDate}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="modifyDate">
+          <mat-header-cell *matHeaderCellDef>修改日期</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.modifyDate}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="purchaseHistory">
+          <mat-header-cell *matHeaderCellDef>消费记录</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.purchaseHistory}}</mat-cell>
+        </ng-container>
+
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </mat-card-content>
+    <mat-card-actions class="bottom-button">
+      <button mat-button color="primary" (click)="saveUser()">增加客户信息</button>
+      <button mat-button color="primary">修改客户信息</button>
+      <button mat-button color="primary">导入客户资料</button>
+      <button mat-button color="primary">导出客户资料</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div>
+
+</div>

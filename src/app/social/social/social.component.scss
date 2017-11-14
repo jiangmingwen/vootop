@@ -2,9 +2,6 @@ $border-radius-base: 2px !default;
 $font-size-base: 0.875rem !default;
 
 :host {
-    margin-left: -5px;
-    margin-right: -5px;
-    margin-top: -5px;
     display: block;
 }
 .wrapper {
@@ -23,14 +20,7 @@ $font-size-base: 0.875rem !default;
     background: #3f51b5;
     color: hsla(0,0%,100%,.87);
 }
-// .mat-toolbar .mat-toolbar-row {
-//     display: flex;
-//     box-sizing: border-box;
-//     width: 100%;
-//     flex-direction: row;
-//     align-items: center;
-//     white-space: nowrap;
-// }
+
 .mat-fab.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent {
     background-color: #ffd740;
 }

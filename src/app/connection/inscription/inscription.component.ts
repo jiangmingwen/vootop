@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {Router} from '@angular/router';
-import {CustomValidators} from 'ng2-validation';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CustomValidators } from 'ng2-validation';
 
 const password = new FormControl('', Validators.required);
 const confirmPassword = new FormControl('', CustomValidators.equalTo(password));
@@ -22,22 +22,23 @@ export class InscriptionComponent implements OnInit {
   constructor(private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
-    this.form = this.fb.group( {
+    this.form = this.fb.group({
       email: email,
       password: password,
       confirmPassword: confirmPassword
-    } );
+    });
   }
 
   onSubmit() {
-    this.router.navigate(['./connection/connection']);
+    this.router.navigate(['./']);
   }
   recoverPwd() {
-    this.router.navigate( [ './connection/connection' ] );
+    this.router.navigate(['./repassword']);
   }
   register() {
-    this.router.navigate( [ './connection/connection' ] );
+    this.router.navigate(['./inscription']);
   }
-
-
+  gotoLogin() {
+    this.router.navigate(['./']);
+  }
 }

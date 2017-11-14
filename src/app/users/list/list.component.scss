@@ -1,0 +1,40 @@
+.user-list-bg {
+  padding: 50px;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  min-width: 300px;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+
+.filter-input {
+  text-align: center !important;
+}
+
+.bottom-button {
+  text-align: center !important;
+}
+
+mat-table {
+  margin-top: 25px !important;
+}
+
+mat-header-row {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  background-color: #fff !important;
+}
+
+mat-card {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

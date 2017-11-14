@@ -1,0 +1,591 @@
+{
+  "cashstatement": [
+    {
+      "id": 1,
+      "Invoice": "2154561237899",
+      "PurchaseTime": "2017-09-13 12:03",
+      "Wholesaler": "曹云货商",
+      "PurchasePrice": "200",
+      "PurchaseMen": "赵晓东",
+      "Mtime": "2017-10-23 14:03"
+    },
+    {
+      "id": 2,
+      "Invoice": "2254561237899",
+      "PurchaseTime": "2017-09-14 12:03",
+      "Wholesaler": "曹云货商",
+      "PurchasePrice": "200",
+      "PurchaseMen": "刘云",
+      "Mtime": "2017-10-23 14:03"
+    },
+    {
+      "id": 3,
+      "Invoice": "2254561237899",
+      "PurchaseTime": "2017-09-14 12:03",
+      "Wholesaler": "曹云货商",
+      "PurchasePrice": "200",
+      "PurchaseMen": "刘云",
+      "Mtime": "2017-10-23 14:03"
+    },
+    {
+      "id": 4,
+      "Invoice": "2254561237899",
+      "PurchaseTime": "2017-09-14 12:03",
+      "Wholesaler": "曹云货商",
+      "PurchasePrice": "200",
+      "PurchaseMen": "刘云",
+      "Mtime": "2017-10-23 14:03"
+    },
+    {
+      "id": 5,
+      "Invoice": "2154561237899",
+      "PurchaseTime": "2017-09-13 12:03",
+      "Wholesaler": "曹云货商",
+      "PurchasePrice": "200",
+      "PurchaseMen": "赵晓东",
+      "Mtime": "2017-10-23 14:03"
+    },
+    {
+      "id": 6,
+      "Invoice": "2154561237899",
+      "PurchaseTime": "2017-09-13 12:03",
+      "Wholesaler": "曹云货商",
+      "PurchasePrice": "200",
+      "PurchaseMen": "赵晓东",
+      "Mtime": "2017-10-23 14:03"
+    },
+    {
+      "id": 7,
+      "Invoice": "2154561237899",
+      "PurchaseTime": "2017-09-13 12:03",
+      "Wholesaler": "曹云货商",
+      "PurchasePrice": "200",
+      "PurchaseMen": "赵晓东",
+      "Mtime": "2017-10-23 14:03"
+    },
+    {
+      "id": 8,
+      "Invoice": "2254561237899",
+      "PurchaseTime": "2017-09-14 12:03",
+      "Wholesaler": "曹云货商",
+      "PurchasePrice": "200",
+      "PurchaseMen": "刘云",
+      "Mtime": "2017-10-23 14:03"
+    }
+  ],
+  "cashregister": [
+    {
+      "id": 1,
+      "date": "2017-09-10 12:03",
+      "orderQuantity": "200",
+      "income": "10",
+      "cash": "1",
+      "card": "10",
+      "mealTicket": "123",
+      "other1": "100",
+      "other2": "101",
+      "other3": "102"
+    },
+    {
+      "id": 2,
+      "date": "2017-09-13 12:03",
+      "orderQuantity": "200",
+      "income": "20",
+      "cash": "2",
+      "card": "20",
+      "mealTicket": "172",
+      "other1": "200",
+      "other2": "201",
+      "other3": "202"
+    },
+    {
+      "id": 3,
+      "date": "2017-09-12 12:03",
+      "orderQuantity": "200",
+      "income": "20",
+      "cash": "3",
+      "card": "30",
+      "mealTicket": "162",
+      "other1": "300",
+      "other2": "301",
+      "other3": "302"
+    },
+    {
+      "id": 4,
+      "date": "2017-09-14 12:03",
+      "orderQuantity": "200",
+      "income": "20",
+      "cash": "4",
+      "card": "40",
+      "mealTicket": "102",
+      "other1": "400",
+      "other2": "401",
+      "other3": "402"
+    },
+    {
+      "id": 5,
+      "date": "2017-09-16 12:03",
+      "orderQuantity": "200",
+      "income": "20",
+      "cash": "5",
+      "card": "150",
+      "mealTicket": "122",
+      "other1": "500",
+      "other2": "501",
+      "other3": "502"
+    },
+    {
+      "id": 6,
+      "date": "2017-09-18 12:03",
+      "orderQuantity": "200",
+      "income": "20",
+      "cash": "6",
+      "card": "60",
+      "mealTicket": "132",
+      "other1": "600",
+      "other2": "601",
+      "other3": "122"
+    },
+    {
+      "id": 7,
+      "date": "2017-09-20 12:03",
+      "orderQuantity": "200",
+      "income": "20",
+      "cash": "12",
+      "card": "120",
+      "mealTicket": "142",
+      "other1": "110",
+      "other2": "131",
+      "other3": "12"
+    },
+    {
+      "id": 8,
+      "date": "2017-09-30 12:03",
+      "orderQuantity": "200",
+      "income": "220",
+      "cash": "11",
+      "card": "120",
+      "mealTicket": "152",
+      "other1": "10",
+      "other2": "11",
+      "other3": "12"
+    }
+  ],
+  "cashregister1": [
+    {
+      "id": 1,
+      "date": "2016-12-10 02:03",
+      "orderQuantity": "100",
+      "income": "5",
+      "cash": "121",
+      "card": "70",
+      "mealTicket": "123",
+      "other1": "1700",
+      "other2": "1401",
+      "other3": "1042"
+    },
+    {
+      "id": 2,
+      "date": "2017-01-13 12:03",
+      "orderQuantity": "1042",
+      "income": "210",
+      "cash": "1232",
+      "card": "2210",
+      "mealTicket": "1272",
+      "other1": "10230",
+      "other2": "22301",
+      "other3": "2024"
+    },
+    {
+      "id": 3,
+      "date": "2013-09-12 12:03",
+      "orderQuantity": "12100",
+      "income": "5420",
+      "cash": "523",
+      "card": "230",
+      "mealTicket": "4162",
+      "other1": "23300",
+      "other2": "55301",
+      "other3": "3402"
+    },
+    {
+      "id": 4,
+      "date": "2007-09-14 12:03",
+      "orderQuantity": "200",
+      "income": "20",
+      "cash": "4",
+      "card": "40",
+      "mealTicket": "102",
+      "other1": "4200",
+      "other2": "401",
+      "other3": "402"
+    },
+    {
+      "id": 5,
+      "date": "2014-09-16 12:03",
+      "orderQuantity": "1300",
+      "income": "220",
+      "cash": "35",
+      "card": "12150",
+      "mealTicket": "1222",
+      "other1": "2500",
+      "other2": "6501",
+      "other3": "1502"
+    },
+    {
+      "id": 6,
+      "date": "2017-04-18 12:03",
+      "orderQuantity": "1100",
+      "income": "20",
+      "cash": "6",
+      "card": "60",
+      "mealTicket": "132",
+      "other1": "600",
+      "other2": "601",
+      "other3": "122"
+    },
+    {
+      "id": 7,
+      "date": "2017-09-20 12:03",
+      "orderQuantity": "100",
+      "income": "20",
+      "cash": "12",
+      "card": "120",
+      "mealTicket": "142",
+      "other1": "110",
+      "other2": "131",
+      "other3": "12"
+    },
+    {
+      "id": 8,
+      "date": "2017-09-30 12:03",
+      "orderQuantity": "100",
+      "income": "220",
+      "cash": "11",
+      "card": "120",
+      "mealTicket": "152",
+      "other1": "10",
+      "other2": "11",
+      "other3": "12"
+    }
+  ],
+  "cashregister2": [
+    {
+      "id": 1,
+      "date": "2017-09-10 12:03",
+      "orderQuantity": "200",
+      "income": "10",
+      "cash": "1",
+      "card": "10",
+      "mealTicket": "123",
+      "other1": "100",
+      "other2": "101",
+      "other3": "102"
+    },
+    {
+      "id": 2,
+      "date": "2017-09-13 12:03",
+      "orderQuantity": "200",
+      "income": "20",
+      "cash": "2",
+      "card": "20",
+      "mealTicket": "172",
+      "other1": "200",
+      "other2": "201",
+      "other3": "202"
+    },
+    {
+      "id": 3,
+      "date": "2017-09-12 12:03",
+      "orderQuantity": "200",
+      "income": "20",
+      "cash": "3",
+      "card": "30",
+      "mealTicket": "162",
+      "other1": "300",
+      "other2": "301",
+      "other3": "302"
+    },
+    {
+      "id": 4,
+      "date": "2017-09-14 12:03",
+      "orderQuantity": "200",
+      "income": "20",
+      "cash": "4",
+      "card": "40",
+      "mealTicket": "102",
+      "other1": "400",
+      "other2": "401",
+      "other3": "402"
+    },
+    {
+      "id": 5,
+      "date": "2017-09-16 12:03",
+      "orderQuantity": "200",
+      "income": "20",
+      "cash": "5",
+      "card": "150",
+      "mealTicket": "122",
+      "other1": "500",
+      "other2": "501",
+      "other3": "502"
+    },
+    {
+      "id": 6,
+      "date": "2017-09-18 12:03",
+      "orderQuantity": "200",
+      "income": "20",
+      "cash": "6",
+      "card": "60",
+      "mealTicket": "132",
+      "other1": "600",
+      "other2": "601",
+      "other3": "122"
+    },
+    {
+      "id": 7,
+      "date": "2017-09-20 12:03",
+      "orderQuantity": "200",
+      "income": "20",
+      "cash": "12",
+      "card": "120",
+      "mealTicket": "142",
+      "other1": "110",
+      "other2": "131",
+      "other3": "12"
+    },
+    {
+      "id": 8,
+      "date": "2017-09-30 12:03",
+      "orderQuantity": "200",
+      "income": "220",
+      "cash": "11",
+      "card": "120",
+      "mealTicket": "152",
+      "other1": "10",
+      "other2": "11",
+      "other3": "12"
+    }
+  ],
+  "bills": [
+    {
+      "id": 1,
+      "name": "张三",
+      "tableNum": 1,
+      "paid": true,
+      "type": "pack",
+      "price": 218
+    },
+    {
+      "id": 2,
+      "name": "李四",
+      "tableNum": 2,
+      "paid": false,
+      "type": "send",
+      "price": 128
+    },
+    {
+      "id": 3,
+      "name": "王五",
+      "tableNum": 3,
+      "paid": true,
+      "type": "restaurant",
+      "price": 321
+    },
+    {
+      "id": 4,
+      "name": "赵六",
+      "tableNum": 4,
+      "paid": false,
+      "type": "restaurant",
+      "price": 42314
+    },
+    {
+      "id": 5,
+      "name": "周七",
+      "tableNum": 5,
+      "paid": true,
+      "type": "pack",
+      "price": 418
+    },
+    {
+      "id": 6,
+      "name": "郑八",
+      "tableNum": 6,
+      "paid": true,
+      "type": "pack",
+      "price": 28
+    },
+    {
+      "id": 7,
+      "name": "刘九",
+      "tableNum": 7,
+      "paid": false,
+      "type": "send",
+      "price": 228
+    },
+    {
+      "id": 8,
+      "name": "孙十",
+      "tableNum": 8,
+      "paid": true,
+      "type": "restaurant",
+      "price": 282
+    },
+    {
+      "id": 9,
+      "name": "甘十一",
+      "tableNum": 9,
+      "paid": false,
+      "type": "restaurant",
+      "price": 228
+    },
+    {
+      "id": 10,
+      "name": "肖十二",
+      "tableNum": 10,
+      "paid": true,
+      "type": "pack",
+      "price": 258
+    },
+    {
+      "id": 11,
+      "name": "蒋十三",
+      "tableNum": 11,
+      "paid": true,
+      "type": "pack",
+      "price": 828
+    },
+    {
+      "id": 12,
+      "name": "邱十四",
+      "tableNum": 12,
+      "paid": false,
+      "type": "send",
+      "price": 138
+    },
+    {
+      "id": 13,
+      "name": "马飞飞",
+      "tableNum": 13,
+      "paid": true,
+      "type": "restaurant",
+      "price": 212
+    },
+    {
+      "id": 14,
+      "name": "卢本伟",
+      "tableNum": 14,
+      "paid": false,
+      "type": "restaurant",
+      "price": 321
+    },
+    {
+      "id": 15,
+      "name": "五五开",
+      "tableNum": 15,
+      "paid": true,
+      "type": "pack",
+      "price": 23218
+    }
+  ],
+  "categorys": [
+    {
+      "id": "HkT1NFkCW",
+      "categoryName": "酒",
+      "addTime": "2017-10-26T15:48:48.664Z"
+    },
+    {
+      "id": "BkZIxWCA-",
+      "categoryName": "香烟",
+      "addTime": "2017-11-19T16:00:00.000Z"
+    }
+  ],
+  "subCategorys": [
+    {
+      "id": 1,
+      "categoryName": "白酒",
+      "pId": "HkT1NFkCW",
+      "pName": "酒",
+      "addTime": "2017-11-06T15:33:59.575Z"
+    },
+    {
+      "id": 2,
+      "categoryName": "红酒",
+      "pId": "HkT1NFkCW",
+      "pName": "酒",
+      "addTime": "2017-11-06T15:34:14.047Z"
+    },
+    {
+      "id": 3,
+      "categoryName": "芙蓉王",
+      "pId": "BkZIxWCA-",
+      "pName": "香烟",
+      "addTime": "2017-11-06T15:34:30.078Z"
+    },
+    {
+      "id": 4,
+      "categoryName": "白沙",
+      "pId": "BkZIxWCA-",
+      "pName": "香烟",
+      "addTime": "2017-11-06T15:34:42.021Z"
+    },
+    {
+      "id": 5,
+      "categoryName": "葡萄酒",
+      "pId": "HkT1NFkCW",
+      "pName": "酒",
+      "addTime": "2017-11-06T16:15:05.781Z"
+    }
+  ],
+  "menus": [
+    {
+      "id": 1,
+      "name": "xx白酒",
+      "desc": "大大",
+      "unitPrice": 44,
+      "taxRatio": 6,
+      "noTaxPrice": 41.36,
+      "onSelfDate": "2017-11-05T16:00:00.000Z",
+      "categoryId": "HkT1NFkCW",
+      "categoryName": "酒",
+      "subCategoryId": 1,
+      "subCategoryName": "白酒"
+    },
+    {
+      "id": 2,
+      "name": "极品芙蓉王",
+      "desc": "方方",
+      "unitPrice": 564,
+      "taxRatio": 6,
+      "noTaxPrice": 530.16,
+      "onSelfDate": "2017-11-05T16:00:00.000Z",
+      "categoryId": "BkZIxWCA-",
+      "categoryName": "香烟",
+      "subCategoryId": 3,
+      "subCategoryName": "芙蓉王"
+    }
+  ],
+  "taxs": [
+    {
+      "id": 1,
+      "name": "常规税率1",
+      "taxRatio": 10
+    },
+    {
+      "id": 2,
+      "name": "其他税率1",
+      "taxRatio": 6
+    },
+    {
+      "id": 3,
+      "name": "其他税率2",
+      "taxRatio": 7
+    },
+    {
+      "id": 4,
+      "name": "其他税率3",
+      "taxRatio": 9
+    }
+  ]
+}

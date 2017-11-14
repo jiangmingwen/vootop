@@ -1,0 +1,17 @@
+.bill-sidenav.mat-drawer{
+    width: 50px;
+    position: absolute;
+    right: 5px;
+    top:5px;
+    height: calc(100% - 10px);
+    background-color: rgba(0, 0, 0, .8);
+    color: #FFF;
+    cursor: pointer;
+    border-radius: 2px;
+    min-width: 0;
+    overflow: hidden;
+    transform: translate3d(0,0,0);
+}
+.mat-card.bill-item {
+    margin:0;
+}

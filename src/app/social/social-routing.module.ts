@@ -3,9 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import {SocialComponent} from './social/social.component';
 
 const routes: Routes = [
-  { path: '', children: [
-    {path: 'social', component: SocialComponent},
-  ]}
+  { path: '', 
+    component: SocialComponent}
 ];
 
 @NgModule({

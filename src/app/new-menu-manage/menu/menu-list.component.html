@@ -1,0 +1,79 @@
+
+<div class="example-container mat-elevation-z8">
+
+  <mat-table #table [dataSource]="dataSource">
+
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>菜单名称</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="desc">
+      <mat-header-cell *matHeaderCellDef>菜单描述</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.desc}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="unitPrice">
+      <mat-header-cell *matHeaderCellDef>单价</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.unitPrice}} </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="taxRatio">
+      <mat-header-cell *matHeaderCellDef>税率</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.taxRatio}}% </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="noTaxPrice">
+      <mat-header-cell *matHeaderCellDef>税前价格</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.noTaxPrice}} </mat-cell>
+    </ng-container>
+
+
+
+    <ng-container matColumnDef="categoryName">
+      <mat-header-cell *matHeaderCellDef>所属分类</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.categoryName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="subCategoryName">
+      <mat-header-cell *matHeaderCellDef>所属子类</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.subCategoryName}} </mat-cell>
+    </ng-container>
+
+
+
+    <ng-container matColumnDef="onSelfDate">
+      <mat-header-cell *matHeaderCellDef> 上架时间 </mat-header-cell>
+      <mat-cell *matCellDef="let row" > {{row.onSelfDate |date:'yyyy-MM-dd'}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actionsColumn">
+      <mat-header-cell *matHeaderCellDef>
+        <button mat-mini-fab color="accent" (click)="addMenu()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <button  mat-mini-fab color="primary" focusable="false" (click)="editMenu(row.id)">
+          <mat-icon>edit</mat-icon>
+        </button>
+
+        <button mat-mini-fab color="warn" focusable="false" (click)="deleteMenu(row.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <!--<mat-paginator #paginator-->
+  <!--[length]="9"-->
+  <!--[pageIndex]="0"-->
+  <!--[pageSize]="25"-->
+  <!--[pageSizeOptions]="[5, 10, 25, 100]">-->
+  <!--</mat-paginator>-->
+</div>

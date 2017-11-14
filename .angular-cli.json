@@ -20,6 +20,7 @@
       "prefix": "app",
       "styles": [
         "assets/style/app.scss",
+        "../node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
         "styles.scss"
       ],
       "scripts": [

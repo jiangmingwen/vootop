@@ -19,10 +19,10 @@
 
 # IDE - VSCode
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+!.vscode/settingsf.json
+!.vscode/tasksf.json
+!.vscode/launchf.json
+!.vscode/extensionsf.json
 
 # misc
 /.sass-cache
@@ -34,7 +34,7 @@ testem.log
 /typings
 
 # e2e
-/e2e/*.js
+/e2e/*f.js
 /e2e/*.map
 
 # System Files

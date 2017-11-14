@@ -6,7 +6,8 @@ import {
   MatCardModule,
   MatCheckboxModule,
   MatIconModule,
-  MatInputModule, MatListModule, MatMenuModule, MatSelectModule, MatSidenavModule, MatTabsModule, MatToolbarModule
+  MatInputModule, MatListModule, MatMenuModule, MatSelectModule, MatSidenavModule, MatTabsModule, MatToolbarModule,
+  
 } from '@angular/material';
 import {FlexLayoutModule} from "@angular/flex-layout";
 
